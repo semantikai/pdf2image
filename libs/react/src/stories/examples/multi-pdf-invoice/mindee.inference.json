@@ -1,0 +1,1038 @@
+{
+  "extras": {},
+  "finished_at": "2024-06-15T11:29:08.997800",
+  "is_rotation_applied": true,
+  "pages": [
+    {
+      "extras": {},
+      "id": 0,
+      "orientation": { "value": 0 },
+      "prediction": {
+        "billing_address": { "confidence": 0, "polygon": [], "value": null },
+        "customer_address": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.095, 0.912],
+            [0.161, 0.912],
+            [0.161, 0.935],
+            [0.095, 0.935]
+          ],
+          "value": "5Any"
+        },
+        "customer_company_registrations": [],
+        "customer_id": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.62, 0.74],
+            [0.818, 0.74],
+            [0.818, 0.76],
+            [0.62, 0.76]
+          ],
+          "value": "3456 789112 012"
+        },
+        "customer_name": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.543, 0.865],
+            [0.78, 0.865],
+            [0.78, 0.89],
+            [0.543, 0.89]
+          ],
+          "raw_value": "Mr and Mrs Fielding",
+          "value": "MR AND MRS FIELDING"
+        },
+        "date": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.219, 0.111],
+            [0.321, 0.111],
+            [0.321, 0.132],
+            [0.219, 0.132]
+          ],
+          "value": "2016-06-05"
+        },
+        "document_type": { "value": "INVOICE" },
+        "due_date": { "confidence": 0, "polygon": [], "value": null },
+        "invoice_number": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.804, 0.112],
+            [0.906, 0.112],
+            [0.906, 0.132],
+            [0.804, 0.132]
+          ],
+          "value": "0003521"
+        },
+        "line_items": [
+          {
+            "confidence": 0.99,
+            "description": "Labour",
+            "polygon": [
+              [0.132, 0.413],
+              [0.907, 0.413],
+              [0.907, 0.434],
+              [0.132, 0.434]
+            ],
+            "product_code": null,
+            "quantity": 23.75,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 950,
+            "unit_price": 40
+          },
+          {
+            "confidence": 0.99,
+            "description": "Nails and screws",
+            "polygon": [
+              [0.132, 0.434],
+              [0.907, 0.434],
+              [0.907, 0.457],
+              [0.132, 0.457]
+            ],
+            "product_code": null,
+            "quantity": 50,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 40,
+            "unit_price": 0.8
+          },
+          {
+            "confidence": 0.99,
+            "description": "Paint and Plywood",
+            "polygon": [
+              [0.134, 0.452],
+              [0.907, 0.452],
+              [0.907, 0.482],
+              [0.134, 0.482]
+            ],
+            "product_code": null,
+            "quantity": 1,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 1000,
+            "unit_price": 1000
+          },
+          {
+            "confidence": 0.99,
+            "description": "Imported wall tiles",
+            "polygon": [
+              [0.132, 0.478],
+              [0.907, 0.478],
+              [0.907, 0.502],
+              [0.132, 0.502]
+            ],
+            "product_code": null,
+            "quantity": 40,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 560,
+            "unit_price": 14
+          },
+          {
+            "confidence": 0.99,
+            "description": "Freight",
+            "polygon": [
+              [0.137, 0.496],
+              [0.906, 0.496],
+              [0.906, 0.526],
+              [0.137, 0.526]
+            ],
+            "product_code": null,
+            "quantity": 1,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 150,
+            "unit_price": 150
+          }
+        ],
+        "locale": { "confidence": 0.89, "currency": "USD", "language": "en" },
+        "orientation": { "confidence": 0.99, "degrees": 0 },
+        "reference_numbers": [
+          {
+            "confidence": 0.99,
+            "polygon": [
+              [0.495, 0.072],
+              [0.549, 0.072],
+              [0.549, 0.091],
+              [0.495, 0.091]
+            ],
+            "value": "0800"
+          }
+        ],
+        "shipping_address": { "confidence": 0, "polygon": [], "value": null },
+        "supplier_address": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.292, 0.049],
+            [0.711, 0.049],
+            [0.711, 0.093],
+            [0.292, 0.093]
+          ],
+          "value": "5 Any Street, Any City, That Area Code Telephone: 0800 XXX XXX"
+        },
+        "supplier_company_registrations": [
+          {
+            "confidence": 0.99,
+            "polygon": [
+              [0.82, 0.157],
+              [0.907, 0.157],
+              [0.907, 0.177],
+              [0.82, 0.177]
+            ],
+            "type": "COMPANY REGISTRATION NUMBER",
+            "value": "123456"
+          }
+        ],
+        "supplier_email": { "confidence": 0, "polygon": [], "value": null },
+        "supplier_name": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.321, 0.024],
+            [0.684, 0.024],
+            [0.684, 0.048],
+            [0.321, 0.048]
+          ],
+          "raw_value": "TOM GREEN HANDYMAN",
+          "value": "TOM GREEN HANDYMAN"
+        },
+        "supplier_payment_details": [],
+        "supplier_phone_number": {
+          "confidence": 0,
+          "polygon": [],
+          "value": null
+        },
+        "supplier_website": { "confidence": 0, "polygon": [], "value": null },
+        "taxes": [],
+        "total_amount": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.791, 0.91],
+            [0.908, 0.91],
+            [0.908, 0.935],
+            [0.791, 0.935]
+          ],
+          "value": 3367.2
+        },
+        "total_net": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.811, 0.566],
+            [0.907, 0.566],
+            [0.907, 0.588],
+            [0.811, 0.588]
+          ],
+          "value": 2928
+        },
+        "total_tax": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.826, 0.609],
+            [0.907, 0.609],
+            [0.907, 0.632],
+            [0.826, 0.632]
+          ],
+          "value": 439.2
+        }
+      }
+    },
+    {
+      "extras": {},
+      "id": 1,
+      "orientation": { "value": 0 },
+      "prediction": {
+        "billing_address": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.159, 0.263],
+            [0.351, 0.263],
+            [0.351, 0.311],
+            [0.159, 0.311]
+          ],
+          "value": "355 Madison Avenue Suite 4500 New York, NY 10020"
+        },
+        "customer_address": { "confidence": 0, "polygon": [], "value": null },
+        "customer_company_registrations": [],
+        "customer_id": { "confidence": 0, "polygon": [], "value": null },
+        "customer_name": {
+          "confidence": 0,
+          "polygon": [],
+          "raw_value": null,
+          "value": null
+        },
+        "date": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.257, 0.377],
+            [0.373, 0.377],
+            [0.373, 0.396],
+            [0.257, 0.396]
+          ],
+          "value": "2013-08-31"
+        },
+        "document_type": { "value": "INVOICE" },
+        "due_date": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.442, 0.378],
+            [0.555, 0.378],
+            [0.555, 0.395],
+            [0.442, 0.395]
+          ],
+          "value": "2013-09-30"
+        },
+        "invoice_number": { "confidence": 0, "polygon": [], "value": null },
+        "line_items": [
+          {
+            "confidence": 0.99,
+            "description": "02 Schematic Design Stipulated % phase Amount billed completed $80,000.00 100.00% $80,000.00",
+            "polygon": [
+              [0.043, 0.419],
+              [0.962, 0.419],
+              [0.962, 0.467],
+              [0.043, 0.467]
+            ],
+            "product_code": null,
+            "quantity": 0,
+            "tax_amount": null,
+            "tax_rate": 0,
+            "total_amount": 0,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "03 Design Development $120,000.00 100.00% $120,000.00",
+            "polygon": [
+              [0.043, 0.463],
+              [0.962, 0.463],
+              [0.962, 0.478],
+              [0.043, 0.478]
+            ],
+            "product_code": null,
+            "quantity": null,
+            "tax_amount": null,
+            "tax_rate": 0,
+            "total_amount": 0,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "04 Construction Documents $150,000.00 60.00% $90,000.00",
+            "polygon": [
+              [0.043, 0.477],
+              [0.963, 0.477],
+              [0.963, 0.492],
+              [0.043, 0.492]
+            ],
+            "product_code": null,
+            "quantity": null,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 51000,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "$350,000.00 82.8670 $290,000.00",
+            "polygon": [
+              [0.383, 0.492],
+              [0.963, 0.492],
+              [0.963, 0.507],
+              [0.383, 0.507]
+            ],
+            "product_code": null,
+            "quantity": 9000,
+            "tax_amount": null,
+            "tax_rate": 2.57,
+            "total_amount": 51000,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "Dote Employee 8/1/2013 DF Prepare Payout Request Log",
+            "polygon": [
+              [0.042, 0.54],
+              [0.963, 0.54],
+              [0.963, 0.581],
+              [0.042, 0.581]
+            ],
+            "product_code": null,
+            "quantity": 3,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 375,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "8/1/2013 DF Preconstruction Meeting with and Contractor",
+            "polygon": [
+              [0.042, 0.579],
+              [0.963, 0.579],
+              [0.963, 0.607],
+              [0.042, 0.607]
+            ],
+            "product_code": null,
+            "quantity": 3,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 375,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "8/1/2013 DF Review Procedures for Submiftal Review of Payout Requests with Contractor",
+            "polygon": [
+              [0.042, 0.605],
+              [0.963, 0.605],
+              [0.963, 0.645],
+              [0.042, 0.645]
+            ],
+            "product_code": null,
+            "quantity": 2,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 250,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "8/7/2013 HR Project Directory- Construction/test",
+            "polygon": [
+              [0.042, 0.644],
+              [0.963, 0.644],
+              [0.963, 0.659],
+              [0.042, 0.659]
+            ],
+            "product_code": null,
+            "quantity": 1,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 250,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "06 Contract Administration",
+            "polygon": [
+              [0.467, 0.658],
+              [0.963, 0.658],
+              [0.963, 0.671],
+              [0.467, 0.671]
+            ],
+            "product_code": null,
+            "quantity": 9,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 1250,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "8/15/2013 HR Survey",
+            "polygon": [
+              [0.042, 0.743],
+              [0.963, 0.743],
+              [0.963, 0.758],
+              [0.042, 0.758]
+            ],
+            "product_code": null,
+            "quantity": 6.25,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 1562.5,
+            "unit_price": null
+          },
+          {
+            "confidence": 0.99,
+            "description": "02 Schemalic Design",
+            "polygon": [
+              [0.505, 0.756],
+              [0.963, 0.756],
+              [0.963, 0.771],
+              [0.505, 0.771]
+            ],
+            "product_code": null,
+            "quantity": 6.25,
+            "tax_amount": null,
+            "tax_rate": null,
+            "total_amount": 1562.5,
+            "unit_price": null
+          }
+        ],
+        "locale": { "confidence": 0.89, "currency": "USD", "language": "en" },
+        "orientation": { "confidence": 0.99, "degrees": 0 },
+        "reference_numbers": [
+          {
+            "confidence": 0.99,
+            "polygon": [
+              [0.638, 0.377],
+              [0.726, 0.377],
+              [0.726, 0.394],
+              [0.638, 0.394]
+            ],
+            "value": "2012-0001"
+          }
+        ],
+        "shipping_address": { "confidence": 0, "polygon": [], "value": null },
+        "supplier_address": { "confidence": 0, "polygon": [], "value": null },
+        "supplier_company_registrations": [],
+        "supplier_email": { "confidence": 0, "polygon": [], "value": null },
+        "supplier_name": {
+          "confidence": 0,
+          "polygon": [],
+          "raw_value": null,
+          "value": null
+        },
+        "supplier_payment_details": [],
+        "supplier_phone_number": {
+          "confidence": 0,
+          "polygon": [],
+          "value": null
+        },
+        "supplier_website": { "confidence": 0, "polygon": [], "value": null },
+        "taxes": [],
+        "total_amount": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.879, 0.795],
+            [0.964, 0.795],
+            [0.964, 0.814],
+            [0.879, 0.814]
+          ],
+          "value": 11812.5
+        },
+        "total_net": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.879, 0.795],
+            [0.964, 0.795],
+            [0.964, 0.814],
+            [0.879, 0.814]
+          ],
+          "value": 11812.5
+        },
+        "total_tax": {
+          "confidence": 0.99,
+          "polygon": [
+            [0.891, 0.775],
+            [0.963, 0.775],
+            [0.963, 0.787],
+            [0.891, 0.787]
+          ],
+          "value": 1562.5
+        }
+      }
+    }
+  ],
+  "prediction": {
+    "billing_address": {
+      "confidence": 0.99,
+      "page_id": 1,
+      "polygon": [
+        [0.159, 0.263],
+        [0.351, 0.263],
+        [0.351, 0.311],
+        [0.159, 0.311]
+      ],
+      "value": "355 Madison Avenue Suite 4500 New York, NY 10020"
+    },
+    "customer_address": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.095, 0.912],
+        [0.161, 0.912],
+        [0.161, 0.935],
+        [0.095, 0.935]
+      ],
+      "value": "5Any"
+    },
+    "customer_company_registrations": [],
+    "customer_id": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.62, 0.74],
+        [0.818, 0.74],
+        [0.818, 0.76],
+        [0.62, 0.76]
+      ],
+      "value": "3456 789112 012"
+    },
+    "customer_name": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.543, 0.865],
+        [0.78, 0.865],
+        [0.78, 0.89],
+        [0.543, 0.89]
+      ],
+      "raw_value": "Mr and Mrs Fielding",
+      "value": "MR AND MRS FIELDING"
+    },
+    "date": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.219, 0.111],
+        [0.321, 0.111],
+        [0.321, 0.132],
+        [0.219, 0.132]
+      ],
+      "value": "2016-06-05"
+    },
+    "document_type": { "value": "INVOICE" },
+    "due_date": {
+      "confidence": 0.99,
+      "page_id": 1,
+      "polygon": [
+        [0.442, 0.378],
+        [0.555, 0.378],
+        [0.555, 0.395],
+        [0.442, 0.395]
+      ],
+      "value": "2013-09-30"
+    },
+    "invoice_number": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.804, 0.112],
+        [0.906, 0.112],
+        [0.906, 0.132],
+        [0.804, 0.132]
+      ],
+      "value": "0003521"
+    },
+    "line_items": [
+      {
+        "confidence": 0.99,
+        "description": "Labour",
+        "page_id": 0,
+        "polygon": [
+          [0.132, 0.413],
+          [0.907, 0.413],
+          [0.907, 0.434],
+          [0.132, 0.434]
+        ],
+        "product_code": null,
+        "quantity": 23.75,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 950,
+        "unit_price": 40
+      },
+      {
+        "confidence": 0.99,
+        "description": "Nails and screws",
+        "page_id": 0,
+        "polygon": [
+          [0.132, 0.434],
+          [0.907, 0.434],
+          [0.907, 0.457],
+          [0.132, 0.457]
+        ],
+        "product_code": null,
+        "quantity": 50,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 40,
+        "unit_price": 0.8
+      },
+      {
+        "confidence": 0.99,
+        "description": "Paint and Plywood",
+        "page_id": 0,
+        "polygon": [
+          [0.134, 0.452],
+          [0.907, 0.452],
+          [0.907, 0.482],
+          [0.134, 0.482]
+        ],
+        "product_code": null,
+        "quantity": 1,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 1000,
+        "unit_price": 1000
+      },
+      {
+        "confidence": 0.99,
+        "description": "Imported wall tiles",
+        "page_id": 0,
+        "polygon": [
+          [0.132, 0.478],
+          [0.907, 0.478],
+          [0.907, 0.502],
+          [0.132, 0.502]
+        ],
+        "product_code": null,
+        "quantity": 40,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 560,
+        "unit_price": 14
+      },
+      {
+        "confidence": 0.99,
+        "description": "Freight",
+        "page_id": 0,
+        "polygon": [
+          [0.137, 0.496],
+          [0.906, 0.496],
+          [0.906, 0.526],
+          [0.137, 0.526]
+        ],
+        "product_code": null,
+        "quantity": 1,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 150,
+        "unit_price": 150
+      },
+      {
+        "confidence": 0.99,
+        "description": "02 Schematic Design Stipulated % phase Amount billed completed $80,000.00 100.00% $80,000.00",
+        "page_id": 1,
+        "polygon": [
+          [0.043, 0.419],
+          [0.962, 0.419],
+          [0.962, 0.467],
+          [0.043, 0.467]
+        ],
+        "product_code": null,
+        "quantity": 0,
+        "tax_amount": null,
+        "tax_rate": 0,
+        "total_amount": 0,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "03 Design Development $120,000.00 100.00% $120,000.00",
+        "page_id": 1,
+        "polygon": [
+          [0.043, 0.463],
+          [0.962, 0.463],
+          [0.962, 0.478],
+          [0.043, 0.478]
+        ],
+        "product_code": null,
+        "quantity": null,
+        "tax_amount": null,
+        "tax_rate": 0,
+        "total_amount": 0,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "04 Construction Documents $150,000.00 60.00% $90,000.00",
+        "page_id": 1,
+        "polygon": [
+          [0.043, 0.477],
+          [0.963, 0.477],
+          [0.963, 0.492],
+          [0.043, 0.492]
+        ],
+        "product_code": null,
+        "quantity": null,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 51000,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "$350,000.00 82.8670 $290,000.00",
+        "page_id": 1,
+        "polygon": [
+          [0.383, 0.492],
+          [0.963, 0.492],
+          [0.963, 0.507],
+          [0.383, 0.507]
+        ],
+        "product_code": null,
+        "quantity": 9000,
+        "tax_amount": null,
+        "tax_rate": 2.57,
+        "total_amount": 51000,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "Dote Employee 8/1/2013 DF Prepare Payout Request Log",
+        "page_id": 1,
+        "polygon": [
+          [0.042, 0.54],
+          [0.963, 0.54],
+          [0.963, 0.581],
+          [0.042, 0.581]
+        ],
+        "product_code": null,
+        "quantity": 3,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 375,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "8/1/2013 DF Preconstruction Meeting with and Contractor",
+        "page_id": 1,
+        "polygon": [
+          [0.042, 0.579],
+          [0.963, 0.579],
+          [0.963, 0.607],
+          [0.042, 0.607]
+        ],
+        "product_code": null,
+        "quantity": 3,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 375,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "8/1/2013 DF Review Procedures for Submiftal Review of Payout Requests with Contractor",
+        "page_id": 1,
+        "polygon": [
+          [0.042, 0.605],
+          [0.963, 0.605],
+          [0.963, 0.645],
+          [0.042, 0.645]
+        ],
+        "product_code": null,
+        "quantity": 2,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 250,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "8/7/2013 HR Project Directory- Construction/test",
+        "page_id": 1,
+        "polygon": [
+          [0.042, 0.644],
+          [0.963, 0.644],
+          [0.963, 0.659],
+          [0.042, 0.659]
+        ],
+        "product_code": null,
+        "quantity": 1,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 250,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "06 Contract Administration",
+        "page_id": 1,
+        "polygon": [
+          [0.467, 0.658],
+          [0.963, 0.658],
+          [0.963, 0.671],
+          [0.467, 0.671]
+        ],
+        "product_code": null,
+        "quantity": 9,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 1250,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "8/15/2013 HR Survey",
+        "page_id": 1,
+        "polygon": [
+          [0.042, 0.743],
+          [0.963, 0.743],
+          [0.963, 0.758],
+          [0.042, 0.758]
+        ],
+        "product_code": null,
+        "quantity": 6.25,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 1562.5,
+        "unit_price": null
+      },
+      {
+        "confidence": 0.99,
+        "description": "02 Schemalic Design",
+        "page_id": 1,
+        "polygon": [
+          [0.505, 0.756],
+          [0.963, 0.756],
+          [0.963, 0.771],
+          [0.505, 0.771]
+        ],
+        "product_code": null,
+        "quantity": 6.25,
+        "tax_amount": null,
+        "tax_rate": null,
+        "total_amount": 1562.5,
+        "unit_price": null
+      }
+    ],
+    "locale": { "confidence": 0.89, "currency": "USD", "language": "en" },
+    "reference_numbers": [
+      {
+        "confidence": 0.99,
+        "page_id": 0,
+        "polygon": [
+          [0.495, 0.072],
+          [0.549, 0.072],
+          [0.549, 0.091],
+          [0.495, 0.091]
+        ],
+        "value": "0800"
+      },
+      {
+        "confidence": 0.99,
+        "page_id": 1,
+        "polygon": [
+          [0.638, 0.377],
+          [0.726, 0.377],
+          [0.726, 0.394],
+          [0.638, 0.394]
+        ],
+        "value": "2012-0001"
+      }
+    ],
+    "shipping_address": {
+      "confidence": 0,
+      "page_id": null,
+      "polygon": [],
+      "value": null
+    },
+    "supplier_address": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.292, 0.049],
+        [0.711, 0.049],
+        [0.711, 0.093],
+        [0.292, 0.093]
+      ],
+      "value": "5 Any Street, Any City, That Area Code Telephone: 0800 XXX XXX"
+    },
+    "supplier_company_registrations": [
+      {
+        "confidence": 0.99,
+        "page_id": 0,
+        "polygon": [
+          [0.82, 0.157],
+          [0.907, 0.157],
+          [0.907, 0.177],
+          [0.82, 0.177]
+        ],
+        "type": "COMPANY REGISTRATION NUMBER",
+        "value": "123456"
+      }
+    ],
+    "supplier_email": {
+      "confidence": 0,
+      "page_id": null,
+      "polygon": [],
+      "value": null
+    },
+    "supplier_name": {
+      "confidence": 0.99,
+      "page_id": 0,
+      "polygon": [
+        [0.321, 0.024],
+        [0.684, 0.024],
+        [0.684, 0.048],
+        [0.321, 0.048]
+      ],
+      "raw_value": "TOM GREEN HANDYMAN",
+      "value": "TOM GREEN HANDYMAN"
+    },
+    "supplier_payment_details": [],
+    "supplier_phone_number": {
+      "confidence": 0,
+      "page_id": null,
+      "polygon": [],
+      "value": null
+    },
+    "supplier_website": {
+      "confidence": 0,
+      "page_id": null,
+      "polygon": [],
+      "value": null
+    },
+    "taxes": [],
+    "total_amount": {
+      "confidence": 0.99,
+      "page_id": 1,
+      "polygon": [
+        [0.879, 0.795],
+        [0.964, 0.795],
+        [0.964, 0.814],
+        [0.879, 0.814]
+      ],
+      "value": 11812.5
+    },
+    "total_net": {
+      "confidence": 0.99,
+      "page_id": 1,
+      "polygon": [
+        [0.879, 0.795],
+        [0.964, 0.795],
+        [0.964, 0.814],
+        [0.879, 0.814]
+      ],
+      "value": 11812.5
+    },
+    "total_tax": {
+      "confidence": 0.99,
+      "page_id": 1,
+      "polygon": [
+        [0.891, 0.775],
+        [0.963, 0.775],
+        [0.963, 0.787],
+        [0.891, 0.787]
+      ],
+      "value": 1562.5
+    }
+  },
+  "processing_time": 1.532,
+  "product": {
+    "features": [
+      "locale",
+      "invoice_number",
+      "reference_numbers",
+      "date",
+      "due_date",
+      "total_net",
+      "total_amount",
+      "total_tax",
+      "taxes",
+      "supplier_payment_details",
+      "supplier_name",
+      "supplier_company_registrations",
+      "supplier_address",
+      "supplier_phone_number",
+      "supplier_website",
+      "supplier_email",
+      "customer_name",
+      "customer_company_registrations",
+      "customer_address",
+      "customer_id",
+      "shipping_address",
+      "billing_address",
+      "document_type",
+      "orientation",
+      "line_items"
+    ],
+    "name": "mindee/invoices",
+    "type": "standard",
+    "version": "4.6"
+  },
+  "started_at": "2024-06-15T11:29:07.466151"
+}
