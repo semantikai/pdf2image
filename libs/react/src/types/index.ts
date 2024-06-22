@@ -34,9 +34,18 @@ export type InferenceResult = {
 };
 
 export type InferenceField = {
+  label: string;
+  id: string;
+  confidence?: number;
+  pageNumber?: number;
+  content?: string;
+  items?: InferenceFieldItem[];
+};
+
+export type InferenceFieldItem = {
+  label: string;
   id: string;
   confidence: number;
-  label: string;
+  pageNumber: number;
   content: string;
-  pageNumber?: number;
 };

@@ -1,4 +1,4 @@
-import { inferenceResultsRef } from "@/signals/inference";
+import { inferenceResultRef } from "@/signals/inference";
 import { InferenceResult } from "@/types";
 import { useSignals } from "@preact/signals-react/runtime";
 import { CSSProperties, ReactNode, useEffect } from "react";
@@ -18,7 +18,7 @@ export default function InferenceProvider({
 }: Props) {
   useSignals();
   useEffect(() => {
-    inferenceResultsRef.value = inferenceResult;
+    inferenceResultRef.value = inferenceResult;
   }, [inferenceResult]);
   return (
     <div

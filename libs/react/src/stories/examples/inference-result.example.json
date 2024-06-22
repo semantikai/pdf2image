@@ -1,0 +1,235 @@
+{
+  "fields": [
+    {
+      "id": "AmountDue",
+      "confidence": 0.943,
+      "label": "AmountDue",
+      "content": "$3,367.20"
+    },
+    {
+      "id": "CustomerName",
+      "confidence": 0.884,
+      "label": "CustomerName",
+      "content": "Mr. John Galt\nTaggart Transcontinental, Inc."
+    },
+    {
+      "id": "InvoiceDate",
+      "confidence": 0.95,
+      "label": "InvoiceDate",
+      "content": "6/5/2016"
+    },
+    {
+      "id": "InvoiceId",
+      "confidence": 0.95,
+      "label": "InvoiceId",
+      "content": "0003521"
+    },
+    {
+      "id": "InvoiceTotal",
+      "confidence": 0.937,
+      "label": "InvoiceTotal",
+      "content": "$3,367.20"
+    },
+    {
+      "id": "Items",
+      "label": "Items"
+    },
+    {
+      "id": "RemittanceAddress",
+      "confidence": 0.546,
+      "label": "RemittanceAddress",
+      "content": "5 Any Street\nAny City\nThat Area Code"
+    },
+    {
+      "id": "RemittanceAddressRecipient",
+      "confidence": 0.804,
+      "label": "RemittanceAddressRecipient",
+      "content": "TOM GREEN HANDYMAN"
+    },
+    {
+      "id": "SubTotal",
+      "confidence": 0.95,
+      "label": "SubTotal",
+      "content": "2928.00"
+    },
+    {
+      "id": "TotalTax",
+      "confidence": 0.95,
+      "label": "TotalTax",
+      "content": "439.20"
+    },
+    {
+      "id": "VendorAddress",
+      "confidence": 0.879,
+      "label": "VendorAddress",
+      "content": "5 Any Street, Any City, That Area Code"
+    },
+    {
+      "id": "VendorAddressRecipient",
+      "confidence": 0.683,
+      "label": "VendorAddressRecipient",
+      "content": "TOM GREEN HANDYMAN"
+    },
+    {
+      "id": "VendorName",
+      "confidence": 0.915,
+      "label": "VendorName",
+      "content": "Fountainhead A+E"
+    },
+    {
+      "id": "BillingAddress",
+      "confidence": 0.868,
+      "label": "BillingAddress",
+      "content": "355 Madison Avenue\nSuite 4500\nNew York, NY 10020"
+    },
+    {
+      "id": "BillingAddressRecipient",
+      "confidence": 0.884,
+      "label": "BillingAddressRecipient",
+      "content": "Mr. John Galt\nTaggart Transcontinental, Inc."
+    },
+    {
+      "id": "DueDate",
+      "confidence": 0.918,
+      "label": "DueDate",
+      "content": "Sep 30, 2013"
+    },
+    {
+      "id": "ServiceAddressRecipient",
+      "confidence": 0.57,
+      "label": "ServiceAddressRecipient",
+      "content": "Galt Residence"
+    }
+  ],
+  "boundingRegions": [
+    {
+      "id": "AmountDue",
+      "pageNumber": 1,
+      "polygon": [
+        817.83936, 1332.77664, 933.7785600000001, 1332.1401600000002,
+        933.7785600000001, 1360.64448, 818.4758400000001, 1361.28096
+      ]
+    },
+    {
+      "id": "CustomerName",
+      "pageNumber": 2,
+      "polygon": [
+        164.71104000000003, 336.36096, 436.47552, 336.36096, 436.47552,
+        383.23584000000005, 164.71104000000003, 383.23584000000005
+      ]
+    },
+    {
+      "id": "InvoiceDate",
+      "pageNumber": 1,
+      "polygon": [
+        228.05952, 165.33504000000002, 328.14912, 165.33504000000002, 328.14912,
+        191.30592000000001, 227.42304000000001, 191.30592000000001
+      ]
+    },
+    {
+      "id": "InvoiceId",
+      "pageNumber": 1,
+      "polygon": [
+        830.5190399999999, 165.33504000000002, 932.5056000000001,
+        164.69856000000001, 933.1420800000001, 191.92991999999998,
+        830.5190399999999, 191.30592000000001
+      ]
+    },
+    {
+      "id": "InvoiceTotal",
+      "pageNumber": 1,
+      "polygon": [
+        815.9424, 959.03808, 932.5056000000001, 959.03808, 933.1420800000001,
+        988.8153599999999, 815.9424, 987.5424
+      ]
+    },
+    {
+      "id": "RemittanceAddress",
+      "pageNumber": 1,
+      "polygon": [
+        100.0896, 1332.0528, 277.95456, 1332.97632, 277.46784, 1428.07392,
+        99.60288000000001, 1427.1504
+      ]
+    },
+    {
+      "id": "RemittanceAddressRecipient",
+      "pageNumber": 1,
+      "polygon": [
+        101.36256000000002, 1298.56896, 393.40704, 1298.56896, 393.40704,
+        1325.8128, 101.36256000000002, 1325.8128
+      ]
+    },
+    {
+      "id": "SubTotal",
+      "pageNumber": 1,
+      "polygon": [
+        840.0163200000001, 829.8201600000001, 930.60864, 827.9232000000001,
+        931.24512, 855.1545600000001, 840.0163200000001, 854.51808
+      ]
+    },
+    {
+      "id": "TotalTax",
+      "pageNumber": 1,
+      "polygon": [
+        853.9564799999999, 892.5321600000001, 930.60864, 892.5321600000001,
+        930.60864, 918.50304, 854.59296, 918.50304
+      ]
+    },
+    {
+      "id": "VendorAddress",
+      "pageNumber": 1,
+      "polygon": [
+        302.17824, 74.74272, 730.41696, 74.74272, 730.41696, 101.98656,
+        302.17824, 101.98656
+      ]
+    },
+    {
+      "id": "VendorAddressRecipient",
+      "pageNumber": 1,
+      "polygon": [
+        335.74944, 37.3776, 696.84576, 37.3776, 696.84576, 67.14240000000001,
+        335.74944, 67.14240000000001
+      ]
+    },
+    {
+      "id": "VendorName",
+      "pageNumber": 2,
+      "polygon": [
+        105.15648, 126.90912, 332.64192, 127.32096, 332.59200000000004,
+        155.28864, 105.10655999999999, 154.87680000000003
+      ]
+    },
+    {
+      "id": "BillingAddress",
+      "pageNumber": 2,
+      "polygon": [
+        165.34752, 385.76928, 356.65344, 385.76928, 356.65344, 453.54816,
+        165.34752, 453.54816
+      ]
+    },
+    {
+      "id": "BillingAddressRecipient",
+      "pageNumber": 2,
+      "polygon": [
+        164.71104000000003, 336.36096, 436.47552, 336.36096, 436.47552,
+        383.23584000000005, 164.71104000000003, 383.23584000000005
+      ]
+    },
+    {
+      "id": "DueDate",
+      "pageNumber": 2,
+      "polygon": [
+        458.65248, 552.3648000000001, 569.5123199999999, 552.3648000000001,
+        569.5123199999999, 574.54176, 458.65248, 574.54176
+      ]
+    },
+    {
+      "id": "ServiceAddressRecipient",
+      "pageNumber": 2,
+      "polygon": [
+        235.02336, 465.57888, 380.72736000000003, 465.57888, 380.72736000000003,
+        488.3923200000001, 235.02336, 488.3923200000001
+      ]
+    }
+  ]
+}
