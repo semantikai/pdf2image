@@ -5,7 +5,7 @@ type Field = {
   value: string;
   confidence: number;
   description?: string;
-  polygon: [number, number][];
+  polygon?: [number, number][];
   page_id: number;
   [key: string]: any;
 };
@@ -30,11 +30,13 @@ const getInferenceResult = (
       };
       if (Array.isArray(field)) {
         field.forEach((f, index) => {
-          acc.boundingRegions.push({
-            id: `${id}-${index}`,
-            pageNumber: f.page_id,
-            polygon: f.polygon,
-          });
+          if (f.polygon) {
+            acc.boundingRegions.push({
+              id: `${id}-${index}`,
+              pageNumber: f.page_id + 1,
+              polygon: f.polygon,
+            });
+          }
         });
         _field = {
           ..._field,
@@ -43,7 +45,7 @@ const getInferenceResult = (
             label: `${id}-${index}`,
             content: f.value,
             confidence: f.confidence,
-            pageNumber: f.page_id,
+            pageNumber: f.page_id + 1,
           })),
         };
       } else {
@@ -52,11 +54,13 @@ const getInferenceResult = (
           content: field.value,
           confidence: field.confidence,
         };
-        acc.boundingRegions.push({
-          id,
-          pageNumber: field.page_id,
-          polygon: field.polygon,
-        });
+        if (field.polygon) {
+          acc.boundingRegions.push({
+            id,
+            pageNumber: field.page_id + 1,
+            polygon: field.polygon,
+          });
+        }
       }
       acc.fields.push(_field);
       return acc;

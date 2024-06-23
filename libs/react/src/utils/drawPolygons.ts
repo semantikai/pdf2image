@@ -13,13 +13,14 @@ const generatePolygon = ({ polygon, style }: BoundingRegion) =>
 
 export default function drawPolygons(
   inferenceShapes: BoundingRegion[],
-  pageIndex: number
+  currentPageNumber: number
 ) {
   const shapesLayer = shapesLayerRef.value;
   if (!shapesLayer) return;
   shapesLayer.destroyChildren();
   inferenceShapes.forEach((shape) => {
-    if (shape.pageNumber !== pageIndex) return;
+    if (shape.pageNumber !== currentPageNumber) return;
+
     const polygonShape = generatePolygon(shape);
     polygonShape.on("click", () => {
       console.log(`Clicked on polygon with id: ${shape.id}`);

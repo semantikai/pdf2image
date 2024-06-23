@@ -92,7 +92,6 @@ export default function InferenceViewer({
 
   useEffect(() => {
     if (pageIndex !== undefined && Number.isInteger(pageIndex)) {
-      console.log("pageIndex", pageIndex);
       currentPageIndexRef.value = pageIndex;
     }
   }, [pageIndex]);

@@ -1,7 +1,13 @@
+export type CoordinateArray = Array<[number, number]>;
+
+export type CoordinateObjectArray = Array<{ x: number; y: number }>;
+
+export type FlatCoordinateArray = Array<number>;
+
 export type PolygonCoordinates =
-  | Array<number[]>
-  | Array<{ x: number; y: number }>
-  | Array<number>;
+  | CoordinateArray
+  | CoordinateObjectArray
+  | FlatCoordinateArray;
 
 export type BoundingRegion = {
   style?: {

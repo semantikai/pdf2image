@@ -1,4 +1,5 @@
-import { PolygonCoordinates } from "@/types";
+import { imageBoundingBoxRef, imageObjRef } from "@/signals";
+import { FlatCoordinateArray, PolygonCoordinates } from "@/types";
 
 export function isFlatArray(arr: PolygonCoordinates): arr is Array<number> {
   for (let i = 0; i < arr.length; i++) {
@@ -16,11 +17,18 @@ export const is2DArray = (
     (point) => typeof point === "object" && "x" in point && "y" in point
   );
 
+const toAbsolute = (point: number, axe: number = 1) => point * axe;
+
 export default function convertCoordinatesToFlatArray(
-  points: Array<number[]> | Array<{ x: number; y: number }> | Array<number>
-): Array<number> {
+  points: PolygonCoordinates
+): FlatCoordinateArray {
   if (is2DArray(points)) {
-    return points.map((point) => [point.x, point.y]).flat();
+    return points
+      .map((point) => [
+        toAbsolute(point.x, imageObjRef.value?.width),
+        toAbsolute(point.y, imageObjRef.value?.height),
+      ])
+      .flat();
   }
   if (points.length % 2 !== 0) {
     throw new Error(
@@ -31,5 +39,12 @@ export default function convertCoordinatesToFlatArray(
     return points;
   }
 
-  return points.reduce((accumulator, value) => accumulator.concat(value), []);
+  return points.reduce<FlatCoordinateArray>(
+    (accumulator, value) =>
+      accumulator.concat([
+        toAbsolute(value[0], imageObjRef.value?.width),
+        toAbsolute(value[1], imageObjRef.value?.height),
+      ]),
+    []
+  );
 }

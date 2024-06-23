@@ -4,7 +4,7 @@ import getImagesFromPDF from "@/utils/getImagesFromPDF";
 import { computedAwait } from "@/utils/shared";
 import { signal } from "@preact/signals-react";
 
-export const currentPageIndexRef = signal(1);
+export const currentPageIndexRef = signal(0);
 
 export const inferenceProcessingDocRef = signal<{
   message: string;

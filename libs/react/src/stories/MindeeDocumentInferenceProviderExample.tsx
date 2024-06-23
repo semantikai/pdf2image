@@ -14,11 +14,13 @@ export default function MindeeDocumentInferenceProviderExample({
   return (
     <MindeeDocumentInferenceProvider inferenceResponse={inferenceResponse}>
       <InferenceViewer documentSrc={documentSrc} />
-      <div className="space-y-4 bg-gray-100 p-4 rounded-lg">
-        <InferenceFields.Field label="SubTotal" id="SubTotal" />
-        <InferenceFields.Field label="Invoice Date" id="InvoiceDate" />
-        <InferenceFields.Field label="Not Found" id="NotFound" />
-      </div>
+      <InferenceFields className="space-y-4 bg-gray-100 p-4 rounded-lg">
+        {(fields) =>
+          fields.map((field) => (
+            <InferenceFields.FieldViewer key={field.id} field={field} />
+          ))
+        }
+      </InferenceFields>
     </MindeeDocumentInferenceProvider>
   );
 }
