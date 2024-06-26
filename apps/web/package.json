@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "preview": "next build && next start",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@editorjs/code": "^2.8.0",
@@ -84,9 +86,18 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.5.0",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@storybook/addon-essentials": "^8.1.6",
+    "@storybook/addon-interactions": "^8.1.6",
+    "@storybook/addon-links": "^8.1.6",
+    "@storybook/addon-onboarding": "^8.1.6",
+    "@storybook/blocks": "^8.1.6",
+    "@storybook/nextjs": "^8.1.10",
+    "@storybook/react": "^8.1.6",
+    "@storybook/test": "^8.1.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.16.0",
@@ -97,6 +108,7 @@
     "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.11.0",
     "husky": "^8.0.3",
     "mdast-util-toc": "^6.1.1",
@@ -111,6 +123,7 @@
     "rehype-slug": "^5.1.0",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
+    "storybook": "^8.1.6",
     "tailwindcss": "^3.3.1",
     "typescript": "4.7.4",
     "unist-util-visit": "^4.1.2"
