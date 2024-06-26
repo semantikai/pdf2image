@@ -17,7 +17,7 @@ export default function InferenceViewerWithFields({
         boundingRegions={inferenceResult.boundingRegions}
       />
       <InferenceFields fields={inferenceResult.fields}>
-        <InferenceFields.Field label="Total tax" id="TotalTax">
+        <InferenceFields.Field id="TotalTax">
           {(field) => <div>{field.content}</div>}
         </InferenceFields.Field>
       </InferenceFields>

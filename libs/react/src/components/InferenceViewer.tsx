@@ -1,30 +1,28 @@
 import { CSSProperties, useEffect } from "react";
 
-import { BoundingRegion } from "@/types";
+import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
-import getInferenceDoc from "@/utils/getInferenceDoc";
-import { containerRef, inferenceDocRef, stageRef } from "@/signals";
+import { containerRef } from "@/signals";
 import { useSignals } from "@preact/signals-react/runtime";
-import initStage from "@/utils/initStage";
 import { currentPageIndexRef, documentPages } from "@/signals/documentPages";
-import { boundingRegionsRef } from "@/signals/inference";
 import {
-  clearInferenceProcessingDoc,
-  inferenceProcessingDocRef,
-} from "@/signals/documentPages";
+  boundingRegionsEventsRef,
+  boundingRegionsRef,
+} from "@/signals/inference";
+import { inferenceProcessingDocRef } from "@/signals/documentPages";
 import { effect } from "@preact/signals-react";
 import { zoomLevelRef } from "@/signals/zoom";
 import Pagination from "./ui/Pagination";
 import ZoomControls from "./ui/ZoomControls";
-import resizeStage from "@/utils/resizeStage";
 import { twMerge } from "tailwind-merge";
 import Loader from "./ui/Loader";
-
-type BoundingRegionsEvents = {
-  onClick?: (boundingRegion: BoundingRegion) => void;
-  onMouseEnter?: (boundingRegion: BoundingRegion) => void;
-  onMouseLeave?: (boundingRegion: BoundingRegion) => void;
-};
+import { ShapeConfig } from "konva/lib/Shape";
+import {
+  DEFAULT_BOUNDING_REGIONS_EVENTS,
+  redrawShape,
+} from "@/utils/drawPolygons";
+import { destroyCanvas, initCanvas } from "@/utils/canvas";
+import { preProcessDocumentSrc } from "@/utils/inferenceDocument";
 
 type Props = {
   style?: CSSProperties;
@@ -45,42 +43,16 @@ export default function InferenceViewer({
   pageIndex,
   zoomLevel,
   className,
+  boundingRegionsEvents,
 }: Props) {
   useSignals();
   useEffect(() => {
-    initStage();
-    return () => {
-      containerRef.value = null;
-      inferenceDocRef.value = undefined;
-      stageRef.value?.destroy();
-      window.removeEventListener("resize", resizeStage);
-      clearInferenceProcessingDoc();
-    };
+    initCanvas();
+    return destroyCanvas;
   }, []);
   useEffect(() => {
     if (documentSrc) {
-      inferenceProcessingDocRef.value = {
-        isProcessing: true,
-        message: "Drawing image...",
-      };
-      getInferenceDoc(documentSrc)
-        .then((inferenceDoc) => {
-          inferenceDocRef.value = inferenceDoc;
-          inferenceProcessingDocRef.value = {
-            isProcessing: false,
-            message: "",
-          };
-        })
-        .catch((e) => {
-          if (e instanceof Error) {
-            console.error(e.message);
-            inferenceProcessingDocRef.value = {
-              isProcessing: false,
-              hasError: true,
-              message: "Error processing document.",
-            };
-          }
-        });
+      preProcessDocumentSrc(documentSrc);
     }
   }, [documentSrc]);
 
@@ -108,6 +80,33 @@ export default function InferenceViewer({
     }
   }, [zoomLevel]);
 
+  effect(() => {
+    if (boundingRegionsEventsRef.value) {
+      const _boundingRegionsEvents = {
+        ...DEFAULT_BOUNDING_REGIONS_EVENTS,
+        ...boundingRegionsEvents,
+      };
+      const [event, boundingRegion] = boundingRegionsEventsRef.value;
+      let shapeConfig: ShapeConfig | undefined | void;
+      switch (event) {
+        case "mouseenter":
+          shapeConfig = _boundingRegionsEvents.onMouseEnter?.(boundingRegion);
+          break;
+        case "mouseleave":
+          shapeConfig = _boundingRegionsEvents.onMouseLeave?.(boundingRegion);
+          break;
+        case "click":
+          shapeConfig = _boundingRegionsEvents?.onClick?.(boundingRegion);
+          break;
+        default:
+          break;
+      }
+      if (shapeConfig) {
+        redrawShape(boundingRegion.id, shapeConfig);
+      }
+      boundingRegionsEventsRef.value = undefined;
+    }
+  });
   return (
     <div
       style={style}

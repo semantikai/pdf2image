@@ -71,6 +71,11 @@ const getInferenceResult = (
     }
   );
 
+export const useMindeeDocumentInferenceProvider = (
+  inferenceResponse: MindeeInferenceResponse
+) => {
+  return getInferenceResult(inferenceResponse);
+};
 export default function MindeeDocumentInferenceProvider({
   children,
   inferenceResponse,

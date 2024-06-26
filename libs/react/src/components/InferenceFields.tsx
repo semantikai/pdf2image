@@ -1,12 +1,15 @@
 import { inferenceFieldsRef } from "@/signals/inference";
-import type { InferenceField } from "@/types";
+import type { BoundingRegionsEvents, InferenceField } from "@/types";
 import { useSignals } from "@preact/signals-react/runtime";
 import { ReactNode, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface FieldProps {
   id: string;
-  children?: (field: InferenceField) => ReactNode;
+  children?: (
+    field: InferenceField,
+    status?: keyof BoundingRegionsEvents
+  ) => ReactNode;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -42,6 +45,7 @@ const FieldViewer = ({
 function Field({ id, children, ...props }: FieldProps) {
   useSignals();
   const field = inferenceFieldsRef.value.get(id);
+
   if (!field) return <div className="text-red-500">-</div>;
   return children ? children(field) : <FieldViewer field={field} {...props} />;
 }

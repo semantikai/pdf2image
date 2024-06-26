@@ -1,7 +1,7 @@
 import { inferenceDocRef } from "@/signals";
 
 import { InferenceDoc } from "@/types";
-import { getInferenceDocFromFile } from "@/utils/getInferenceDoc";
+import { getInferenceDocFromFile } from "@/utils/inferenceDocument";
 
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";

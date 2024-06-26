@@ -1,3 +1,5 @@
+import { inferenceDocRef } from "@/signals";
+import { inferenceProcessingDocRef } from "@/signals/documentPages";
 import { DocType, InferenceDoc } from "@/types";
 
 export function getInferenceDocFromFile(file: File): InferenceDoc {
@@ -16,7 +18,7 @@ export function getInferenceDocFromFile(file: File): InferenceDoc {
   };
 }
 
-export default async function getInferenceDoc(
+export async function getInferenceDoc(
   document: string | File
 ): Promise<InferenceDoc> {
   if (document instanceof File) {
@@ -52,3 +54,28 @@ export default async function getInferenceDoc(
     url: document,
   };
 }
+
+export const preProcessDocumentSrc = (documentSrc: string | File) => {
+  inferenceProcessingDocRef.value = {
+    isProcessing: true,
+    message: "Drawing image...",
+  };
+  getInferenceDoc(documentSrc)
+    .then((inferenceDoc) => {
+      inferenceDocRef.value = inferenceDoc;
+      inferenceProcessingDocRef.value = {
+        isProcessing: false,
+        message: "",
+      };
+    })
+    .catch((e) => {
+      if (e instanceof Error) {
+        console.error(e.message);
+        inferenceProcessingDocRef.value = {
+          isProcessing: false,
+          hasError: true,
+          message: "Error processing document.",
+        };
+      }
+    });
+};

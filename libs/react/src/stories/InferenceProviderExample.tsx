@@ -15,9 +15,9 @@ export default function InferenceProviderExample({
     <InferenceProvider inferenceResult={InferenceResult}>
       <InferenceViewer documentSrc={documentSrc} />
       <div className="space-y-4 bg-gray-100 p-4 rounded-lg">
-        <InferenceFields.Field label="SubTotal" id="SubTotal" />
-        <InferenceFields.Field label="Invoice Date" id="InvoiceDate" />
-        <InferenceFields.Field label="Not Found" id="NotFound" />
+        <InferenceFields.Field id="SubTotal" />
+        <InferenceFields.Field id="InvoiceDate" />
+        <InferenceFields.Field id="NotFound" />
       </div>
     </InferenceProvider>
   );

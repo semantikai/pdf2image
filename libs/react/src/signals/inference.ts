@@ -1,4 +1,9 @@
-import { InferenceField, InferenceResult, BoundingRegion } from "@/types";
+import {
+  InferenceField,
+  InferenceResult,
+  BoundingRegion,
+  BoundingRegionsEventKeys,
+} from "@/types";
 import { effect, signal } from "@preact/signals-react";
 import drawPolygons from "@/utils/drawPolygons";
 import { inferenceImageRef } from "./image";
@@ -12,6 +17,9 @@ export const inferenceFieldsRef = signal(new Map<string, InferenceField>([]));
 
 export const boundingRegionsRef = signal<BoundingRegion[]>([]);
 
+export const boundingRegionsEventsRef = signal<
+  [BoundingRegionsEventKeys, BoundingRegion] | undefined
+>(undefined);
 effect(() => {
   if (inferenceResultRef.value) {
     inferenceFieldsRef.value = new Map(

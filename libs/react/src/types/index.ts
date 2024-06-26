@@ -1,3 +1,5 @@
+import { ShapeConfig } from "konva/lib/Shape";
+
 export type CoordinateArray = Array<[number, number]>;
 
 export type CoordinateObjectArray = Array<{ x: number; y: number }>;
@@ -16,6 +18,7 @@ export type BoundingRegion = {
     strokeWidth?: number;
   };
   extra?: Record<string, any>;
+  activeEvents?: BoundingRegionsEventKeys[];
   content?: string;
   polygon: PolygonCoordinates;
   pageNumber: number;
@@ -45,6 +48,7 @@ export type InferenceField = {
   confidence?: number;
   pageNumber?: number;
   content?: string;
+  activeEvents?: BoundingRegionsEventKeys[];
   items?: InferenceFieldItem[];
 };
 
@@ -54,4 +58,14 @@ export type InferenceFieldItem = {
   confidence: number;
   pageNumber: number;
   content: string;
+  activeEvents?: BoundingRegionsEventKeys[];
 };
+
+export type BoundingRegionsEvents = {
+  onClick?: (boundingRegion: BoundingRegion) => void | ShapeConfig;
+  onMouseEnter?: (boundingRegion: BoundingRegion) => void | ShapeConfig;
+  onMouseLeave?: (boundingRegion: BoundingRegion) => void | ShapeConfig;
+};
+
+export type BoundingRegionsEventKeys =
+  keyof BoundingRegionsEvents extends `on${infer T}` ? Lowercase<T> : never;

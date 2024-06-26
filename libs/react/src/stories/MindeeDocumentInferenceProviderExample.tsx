@@ -2,6 +2,9 @@ import MindeeDocumentInferenceProvider, {
   MindeeInferenceResponse,
 } from "@/components/providers/MindeeDocumentInferenceProvider";
 import { InferenceFields, InferenceViewer } from "@/main";
+import { BoundingRegion } from "@/types";
+import { ShapeConfig } from "konva/lib/Shape";
+import { useState } from "react";
 
 interface Props {
   inferenceResponse: MindeeInferenceResponse;
@@ -11,13 +14,33 @@ export default function MindeeDocumentInferenceProviderExample({
   inferenceResponse,
   documentSrc,
 }: Props) {
+  const [hoveredField, setHoveredField] = useState<string | null>(null);
+  const onMouseEnter = (boundingRegion: BoundingRegion) => {
+    setHoveredField(boundingRegion.id);
+  };
+  const onMouseLeave = () => {
+    setHoveredField(null);
+  };
   return (
     <MindeeDocumentInferenceProvider inferenceResponse={inferenceResponse}>
-      <InferenceViewer documentSrc={documentSrc} />
-      <InferenceFields className="space-y-4 bg-gray-100 p-4 rounded-lg">
+      <InferenceViewer
+        boundingRegionsEvents={{
+          onMouseEnter,
+          onMouseLeave,
+        }}
+        documentSrc={documentSrc}
+      />
+      <InferenceFields className="space-y-4 bg-gray-100 p-4 rounded-lg overflow-y-auto">
         {(fields) =>
           fields.map((field) => (
-            <InferenceFields.FieldViewer key={field.id} field={field} />
+            <InferenceFields.FieldViewer
+              style={{
+                backgroundColor:
+                  hoveredField === field.id ? "yellow" : "transparent",
+              }}
+              key={field.id}
+              field={field}
+            />
           ))
         }
       </InferenceFields>
