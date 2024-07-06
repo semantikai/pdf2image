@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import MindeeDocumentInferenceProviderExample from "./MindeeDocumentInferenceProviderExample";
+import GoogleDocumentInferenceProviderExample from "./GoogleDocumentInferenceProviderExample";
 import mindeeInferenceExample from "./examples/image-invoice/mindee.inference.json";
 import InvoiceImage from "./examples/image-invoice/invoice.png";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/MindeeDocumentInferenceProviderExample",
-  component: MindeeDocumentInferenceProviderExample,
+  title: "Example/GoogleDocumentInferenceProvider",
+  component: GoogleDocumentInferenceProviderExample,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -18,10 +18,10 @@ const meta = {
   argTypes: {},
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
-    inferenceResponse: mindeeInferenceExample as any,
+    inferenceResponse: mindeeInferenceExample,
     documentSrc: InvoiceImage,
   },
-} satisfies Meta<typeof MindeeDocumentInferenceProviderExample>;
+} satisfies Meta<typeof GoogleDocumentInferenceProviderExample>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -6,10 +6,10 @@ interface Props {
   inferenceResponse: GoogleInferenceResponse;
 }
 
-type GoogleInferenceResponse = {};
-const getInferenceResult = (
-  inferenceResponse: GoogleInferenceResponse
-): InferenceResult => {};
+export type GoogleInferenceResponse = {};
+// const getInferenceResult = (
+//   inferenceResponse: GoogleInferenceResponse
+// ): InferenceResult => {};
 export default function GoogleDocumentInferenceProvider({ children }: Props) {
   return <div>{children}</div>;
 }

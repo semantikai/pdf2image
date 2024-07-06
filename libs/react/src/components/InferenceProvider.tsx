@@ -5,7 +5,7 @@ import { CSSProperties, ReactNode, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props {
-  inferenceResult: InferenceResult;
+  inferenceResult?: InferenceResult;
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -18,7 +18,9 @@ export default function InferenceProvider({
 }: Props) {
   useSignals();
   useEffect(() => {
-    inferenceResultRef.value = inferenceResult;
+    if (inferenceResult) {
+      inferenceResultRef.value = inferenceResult;
+    }
   }, [inferenceResult]);
   return (
     <div

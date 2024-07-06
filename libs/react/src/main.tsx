@@ -9,6 +9,7 @@ import AzureDocumentInferenceProvider from "./components/providers/AzureDocument
 import InferenceProvider from "./components/InferenceProvider";
 import InferenceResultViewer from "./components/InferenceResultViewer";
 import MindeeDocumentInferenceProvider from "./components/providers/MindeeDocumentInferenceProvider";
+
 export {
   InferenceViewer,
   InferenceResultViewer,

@@ -114,7 +114,7 @@ export default function InferenceViewer({
     >
       {inferenceProcessingDocRef.value.isProcessing && <Loader />}
       <div
-        className="w-full h-full bg-gray-100 dark:bg-gray-800"
+        className="w-full h-full bg-gray-100 dark:bg-gray-800 min-h-[300px] min-w-[300px]"
         ref={(ref) => {
           containerRef.value = ref;
         }}

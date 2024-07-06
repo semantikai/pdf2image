@@ -41,9 +41,9 @@ interface Props {
 //   }
 // );
 type AzureInferenceResponse = {};
-const getInferenceResult = (
-  inferenceResponse: AzureInferenceResponse
-): InferenceResult => {};
+// const getInferenceResult = (
+//   inferenceResponse: AzureInferenceResponse
+// ): InferenceResult => {};
 export default function AzureDocumentInferenceProvider({
   children,
   inferenceResponse,

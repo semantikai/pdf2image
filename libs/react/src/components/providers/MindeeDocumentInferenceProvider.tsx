@@ -16,7 +16,7 @@ export type MindeeInferenceResponse = {
 
 interface Props {
   children: React.ReactNode;
-  inferenceResponse: MindeeInferenceResponse;
+  inferenceResponse?: MindeeInferenceResponse;
 }
 
 const getInferenceResult = (
@@ -81,7 +81,11 @@ export default function MindeeDocumentInferenceProvider({
   inferenceResponse,
 }: Props) {
   return (
-    <InferenceProvider inferenceResult={getInferenceResult(inferenceResponse)}>
+    <InferenceProvider
+      inferenceResult={
+        inferenceResponse && getInferenceResult(inferenceResponse)
+      }
+    >
       {children}
     </InferenceProvider>
   );

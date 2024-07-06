@@ -11,12 +11,14 @@ export default function resizeStage() {
   const container = containerRef.value;
   const imageObj = imageObjRef.value;
   const imageLayer = imageLayerRef.value;
-  if (!container || !imageObj || !imageLayer) return;
-  if (!stage) return;
+  if (!container || !imageObj || !imageLayer || !stage) {
+    console.error("stage, container, imageObj, or imageLayer is not defined");
+    return;
+  }
+
   stage.width(container.clientWidth);
   stage.height(container.clientHeight);
   const { scale, x, y } = computeImageBoundingBox(container, imageObj);
-
   stage.scale({
     x: scale,
     y: scale,

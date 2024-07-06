@@ -1,15 +1,16 @@
-import MindeeDocumentInferenceProvider, {
-  MindeeInferenceResponse,
-} from "@/components/providers/MindeeDocumentInferenceProvider";
+import GoogleDocumentInferenceProvider, {
+  GoogleInferenceResponse,
+} from "@/components/providers/GoogleDocumentInferenceProvider";
+
 import { InferenceFields, InferenceViewer } from "@/main";
 import { BoundingRegion } from "@/types";
 import { useState } from "react";
 
 interface Props {
-  inferenceResponse: MindeeInferenceResponse;
+  inferenceResponse: GoogleInferenceResponse;
   documentSrc: string;
 }
-export default function MindeeDocumentInferenceProviderExample({
+export default function GoogleDocumentInferenceProviderExample({
   inferenceResponse,
   documentSrc,
 }: Props) {
@@ -21,7 +22,7 @@ export default function MindeeDocumentInferenceProviderExample({
     setHoveredField(null);
   };
   return (
-    <MindeeDocumentInferenceProvider inferenceResponse={inferenceResponse}>
+    <GoogleDocumentInferenceProvider inferenceResponse={inferenceResponse}>
       <InferenceViewer
         boundingRegionsEvents={{
           onMouseEnter,
@@ -43,6 +44,6 @@ export default function MindeeDocumentInferenceProviderExample({
           ))
         }
       </InferenceFields>
-    </MindeeDocumentInferenceProvider>
+    </GoogleDocumentInferenceProvider>
   );
 }

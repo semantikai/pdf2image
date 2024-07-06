@@ -3,15 +3,23 @@ import { inferenceDocRef } from "@/signals";
 import { InferenceDoc } from "@/types";
 import { getInferenceDocFromFile } from "@/utils/inferenceDocument";
 
-import { useCallback } from "react";
+import { CSSProperties, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   children: React.ReactNode;
   onDropFile?: (inferenceDoc: InferenceDoc) => void;
+  className?: string;
+  style?: CSSProperties;
 };
 
-export default function InferenceDropzone({ children, onDropFile }: Props) {
+export default function InferenceDropzone({
+  children,
+  onDropFile,
+  className,
+  style,
+}: Props) {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       if (acceptedFiles[0]) {
@@ -25,14 +33,14 @@ export default function InferenceDropzone({ children, onDropFile }: Props) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div className="flex h-full w-full flex-col">
+    <div
+      style={style}
+      className={twMerge("flex h-full w-full flex-col", className)}
+    >
       {inferenceDocRef.value ? (
         children
       ) : (
-        <div
-          className="flex h-full w-full flex-col bg-green-300"
-          {...getRootProps()}
-        >
+        <div className="flex h-full w-full flex-co" {...getRootProps()}>
           {<input {...getInputProps()} />}
           {isDragActive ? (
             <p>Drop the files here ...</p>

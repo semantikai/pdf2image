@@ -3,12 +3,10 @@ import {
   stageRef,
   imageLayerRef,
   shapesLayerRef,
-  inferenceDocRef,
 } from "@/signals";
 import { Stage } from "konva/lib/Stage";
 import { applyStageZoom } from "./applyStageZoom";
 import resizeStage from "./resizeStage";
-import { clearInferenceProcessingDoc } from "@/signals/documentPages";
 
 export function initCanvas() {
   if (containerRef.value) {
@@ -22,9 +20,9 @@ export function initCanvas() {
 }
 
 export function destroyCanvas() {
-  containerRef.value = null;
-  inferenceDocRef.value = undefined;
-  stageRef.value?.destroy();
-  window.removeEventListener("resize", resizeStage);
-  clearInferenceProcessingDoc();
+  //   containerRef.value = null;
+  //   inferenceDocRef.value = undefined;
+  //   stageRef.value?.destroy();
+  //   window.removeEventListener("resize", resizeStage);
+  //   clearInferenceProcessingDoc();
 }

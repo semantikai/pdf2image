@@ -9,7 +9,7 @@ import {
 import { Image } from "konva/lib/shapes/Image";
 
 export const inferenceImageRef = computed(
-  () => documentPages.value[currentPageIndexRef.value]
+  () => documentPages.value?.[currentPageIndexRef.value]
 );
 
 const loadImage = (image: string) => {
