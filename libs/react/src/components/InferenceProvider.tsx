@@ -2,9 +2,8 @@ import { inferenceDocRef } from "@/signals";
 import { inferenceResultRef } from "@/signals/inference";
 import { InferenceDoc, InferenceResult } from "@/types";
 import { Exclusive } from "@/types/utils";
-import { effect } from "@preact/signals-react";
-import { useSignals } from "@preact/signals-react/runtime";
-import { CSSProperties, ReactNode, useCallback, useEffect } from "react";
+import { useSignalEffect, useSignals } from "@preact/signals-react/runtime";
+import { CSSProperties, ReactNode, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
@@ -32,7 +31,7 @@ export default function InferenceProvider({
       inferenceResultRef.value = inference;
     }
   }, [inference]);
-  effect(async () => {
+  useSignalEffect(async () => {
     if (inferenceDocRef.value && loadAsyncInference) {
       inferenceResultRef.value = await loadAsyncInference(
         inferenceDocRef.value

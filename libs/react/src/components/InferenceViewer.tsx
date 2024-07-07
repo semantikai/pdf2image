@@ -3,7 +3,7 @@ import { CSSProperties, useEffect } from "react";
 import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
 import { containerRef } from "@/signals";
-import { useSignals } from "@preact/signals-react/runtime";
+import { useSignalEffect, useSignals } from "@preact/signals-react/runtime";
 import { currentPageIndexRef, documentPages } from "@/signals/documentPages";
 import {
   boundingRegionsEventsRef,
@@ -58,7 +58,7 @@ export default function InferenceViewer({
     }
   }, [documentSrc]);
 
-  effect(() => {
+  useSignalEffect(() => {
     if (documentPages.value.length && getTotalPages) {
       getTotalPages(documentPages.value.length);
     }
@@ -82,7 +82,7 @@ export default function InferenceViewer({
     }
   }, [zoomLevel]);
 
-  effect(() => {
+  useSignalEffect(() => {
     if (boundingRegionsEventsRef.value) {
       const _boundingRegionsEvents = {
         ...DEFAULT_BOUNDING_REGIONS_EVENTS,
