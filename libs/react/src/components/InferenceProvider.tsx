@@ -31,11 +31,15 @@ export default function InferenceProvider({
       inferenceResultRef.value = inference;
     }
   }, [inference]);
-  useSignalEffect(async () => {
+  useSignalEffect(() => {
     if (inferenceDocRef.value && loadAsyncInference) {
-      inferenceResultRef.value = await loadAsyncInference(
-        inferenceDocRef.value
-      );
+      loadAsyncInference(inferenceDocRef.value)
+        .then((result) => {
+          inferenceResultRef.value = result;
+        })
+        .catch((error) => {
+          console.error("Failed to load inference", error);
+        });
     }
   });
   return (

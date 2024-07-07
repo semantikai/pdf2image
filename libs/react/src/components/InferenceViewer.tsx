@@ -1,5 +1,5 @@
 import { CSSProperties, useEffect } from "react";
-
+import { Icons } from "@repo/ui/icons";
 import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
 import { containerRef } from "@/signals";
@@ -10,7 +10,6 @@ import {
   boundingRegionsRef,
 } from "@/signals/inference";
 import { inferenceProcessingDocRef } from "@/signals/documentPages";
-import { effect } from "@preact/signals-react";
 import { zoomLevelRef } from "@/signals/zoom";
 import Pagination from "./ui/Pagination";
 import ZoomControls from "./ui/ZoomControls";
@@ -114,6 +113,7 @@ export default function InferenceViewer({
       style={style}
       className={twMerge("flex h-full w-full flex-col relative", className)}
     >
+      <Icons.close className="top-1 right-1" />
       {inferenceProcessingDocRef.value.isProcessing && (
         <Loader
           message={inferenceProcessingDocRef.value.message}
