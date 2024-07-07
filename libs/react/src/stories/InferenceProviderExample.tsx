@@ -12,7 +12,7 @@ export default function InferenceProviderExample({
   InferenceResult,
 }: Props) {
   return (
-    <InferenceProvider inferenceResult={InferenceResult}>
+    <InferenceProvider inference={InferenceResult}>
       <InferenceViewer documentSrc={documentSrc} />
       <div className="space-y-4 bg-gray-100 p-4 rounded-lg">
         <InferenceFields.Field id="SubTotal" />

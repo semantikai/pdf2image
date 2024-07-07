@@ -1,5 +1,7 @@
-import { InferenceField, InferenceResult } from "@/types";
+import { InferenceDoc, InferenceField, InferenceResult } from "@/types";
 import InferenceProvider from "../InferenceProvider";
+import { Exclusive } from "@/types/utils";
+import { useMemo } from "react";
 
 type Field = {
   value: string;
@@ -13,11 +15,6 @@ type Field = {
 export type MindeeInferenceResponse = {
   prediction: Record<string, Field | Field[]>;
 };
-
-interface Props {
-  children: React.ReactNode;
-  inferenceResponse?: MindeeInferenceResponse;
-}
 
 const getInferenceResult = (
   inferenceResponse: MindeeInferenceResponse
@@ -76,17 +73,37 @@ export const useMindeeDocumentInferenceProvider = (
 ) => {
   return getInferenceResult(inferenceResponse);
 };
+
+type Props = {
+  children: React.ReactNode;
+} & Exclusive<
+  { inference: MindeeInferenceResponse },
+  {
+    loadAsyncInference: (
+      inferenceDoc: InferenceDoc
+    ) => Promise<MindeeInferenceResponse | undefined>;
+  }
+>;
 export default function MindeeDocumentInferenceProvider({
   children,
-  inferenceResponse,
+  inference,
+  loadAsyncInference,
 }: Props) {
-  return (
-    <InferenceProvider
-      inferenceResult={
-        inferenceResponse && getInferenceResult(inferenceResponse)
-      }
-    >
-      {children}
-    </InferenceProvider>
-  );
+  const props = useMemo(() => {
+    if (inference) {
+      return { inference: getInferenceResult(inference) };
+    }
+    return {
+      loadAsyncInference: async (inferenceDoc: InferenceDoc) => {
+        const response = await loadAsyncInference(inferenceDoc);
+        if (response) {
+          return getInferenceResult(response);
+        } else {
+          console.error("No inference response");
+        }
+      },
+    };
+  }, [inference, loadAsyncInference]);
+
+  return <InferenceProvider {...props}>{children}</InferenceProvider>;
 }

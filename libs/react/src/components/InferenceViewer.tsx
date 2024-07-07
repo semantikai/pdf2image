@@ -33,9 +33,11 @@ type Props = {
   getTotalPages?: (totalPages: number) => void;
   zoomLevel?: number;
   className?: string;
+  isLoading?: boolean;
 };
 
 export default function InferenceViewer({
+  isLoading = false,
   style,
   documentSrc,
   boundingRegions = [],
@@ -110,9 +112,15 @@ export default function InferenceViewer({
   return (
     <div
       style={style}
-      className={twMerge(className, "flex h-full w-full flex-col relative")}
+      className={twMerge("flex h-full w-full flex-col relative", className)}
     >
-      {inferenceProcessingDocRef.value.isProcessing && <Loader />}
+      {inferenceProcessingDocRef.value.isProcessing && (
+        <Loader
+          message={inferenceProcessingDocRef.value.message}
+          hasError={inferenceProcessingDocRef.value.hasError}
+        />
+      )}
+      {isLoading && <Loader message="Analyzing document..." hasError={false} />}
       <div
         className="w-full h-full bg-gray-100 dark:bg-gray-800 min-h-[300px] min-w-[300px]"
         ref={(ref) => {

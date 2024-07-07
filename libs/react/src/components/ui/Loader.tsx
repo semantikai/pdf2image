@@ -1,7 +1,12 @@
-import { inferenceProcessingDocRef } from "@/signals/documentPages";
 import { twMerge } from "tailwind-merge";
 
-export default function Loader() {
+export default function Loader({
+  message,
+  hasError = false,
+}: {
+  message: string;
+  hasError?: boolean;
+}) {
   return (
     <div
       className="absolute h-full w-full z-10 flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90"
@@ -26,12 +31,10 @@ export default function Loader() {
       <span
         className={twMerge(
           "text-sm",
-          inferenceProcessingDocRef.value.hasError
-            ? "text-red-600"
-            : "text-gray-700 dark:text-gray-400"
+          hasError ? "text-red-600" : "text-gray-700 dark:text-gray-400"
         )}
       >
-        {inferenceProcessingDocRef.value.message}
+        {message}
       </span>
     </div>
   );

@@ -11,19 +11,27 @@ import { MindeeInferenceResponse } from "@repo/react/dist/components/providers/M
 import getInferenceAction from "@/actions/getInference";
 
 export default function Widget() {
-  const [inferenceResponse, setInferenceResponse] =
-    useState<MindeeInferenceResponse>();
-  const onDropFile = async (inferenceDoc: InferenceDoc) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const loadAsyncInference = async (
+    inferenceDoc: InferenceDoc
+  ): Promise<MindeeInferenceResponse | undefined> => {
+    setIsLoading(true);
     if (!inferenceDoc.file) return;
     const data = new FormData();
     data.append("document", inferenceDoc.file, inferenceDoc.file.name);
-    const response = await getInferenceAction({ data });
-    console.log(response);
+    try {
+      const response = await getInferenceAction({ data });
+      return response.document.inference;
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
-    <MindeeDocumentInferenceProvider inferenceResponse={inferenceResponse}>
-      <InferenceDropzone onDropFile={onDropFile} className="h-[800px]">
-        <InferenceViewer />
+    <MindeeDocumentInferenceProvider loadAsyncInference={loadAsyncInference}>
+      <InferenceDropzone className="h-[800px]">
+        <InferenceViewer isLoading={isLoading} />
       </InferenceDropzone>
     </MindeeDocumentInferenceProvider>
   );

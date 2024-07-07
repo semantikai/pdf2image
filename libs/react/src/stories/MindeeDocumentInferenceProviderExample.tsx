@@ -21,7 +21,7 @@ export default function MindeeDocumentInferenceProviderExample({
     setHoveredField(null);
   };
   return (
-    <MindeeDocumentInferenceProvider inferenceResponse={inferenceResponse}>
+    <MindeeDocumentInferenceProvider inference={inferenceResponse}>
       <InferenceViewer
         boundingRegionsEvents={{
           onMouseEnter,

@@ -1,31 +1,48 @@
+import { inferenceDocRef } from "@/signals";
 import { inferenceResultRef } from "@/signals/inference";
-import { InferenceResult } from "@/types";
+import { InferenceDoc, InferenceResult } from "@/types";
+import { Exclusive } from "@/types/utils";
+import { effect } from "@preact/signals-react";
 import { useSignals } from "@preact/signals-react/runtime";
-import { CSSProperties, ReactNode, useEffect } from "react";
+import { CSSProperties, ReactNode, useCallback, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface Props {
-  inferenceResult?: InferenceResult;
+type Props = {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
-}
+} & Exclusive<
+  { inference: InferenceResult },
+  {
+    loadAsyncInference: (
+      inferenceDoc: InferenceDoc
+    ) => Promise<InferenceResult | undefined>;
+  }
+>;
 export default function InferenceProvider({
-  inferenceResult,
+  inference,
   children,
   className,
   style,
+  loadAsyncInference,
 }: Props) {
   useSignals();
   useEffect(() => {
-    if (inferenceResult) {
-      inferenceResultRef.value = inferenceResult;
+    if (inference) {
+      inferenceResultRef.value = inference;
     }
-  }, [inferenceResult]);
+  }, [inference]);
+  effect(async () => {
+    if (inferenceDocRef.value && loadAsyncInference) {
+      inferenceResultRef.value = await loadAsyncInference(
+        inferenceDocRef.value
+      );
+    }
+  });
   return (
     <div
       style={style}
-      className={twMerge(className, "flex h-full w-full gap-x-3")}
+      className={twMerge("flex h-full w-full gap-x-3", className)}
     >
       {children}
     </div>
