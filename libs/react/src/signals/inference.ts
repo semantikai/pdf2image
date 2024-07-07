@@ -8,6 +8,7 @@ import { effect, signal } from "@preact/signals-react";
 import drawPolygons from "@/utils/drawPolygons";
 import { inferenceImageRef } from "./image";
 import { currentPageIndexRef } from "./documentPages";
+import { shapesLayerRef } from "@/signals";
 
 export const inferenceResultRef = signal<InferenceResult | undefined>(
   undefined
@@ -32,5 +33,9 @@ effect(() => {
 effect(() => {
   if (boundingRegionsRef.value.length && inferenceImageRef.value) {
     drawPolygons(boundingRegionsRef.value, currentPageIndexRef.value + 1);
+  } else {
+    if (shapesLayerRef.value.children.length) {
+      shapesLayerRef.value.destroyChildren();
+    }
   }
 });

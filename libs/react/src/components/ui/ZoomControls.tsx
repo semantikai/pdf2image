@@ -5,7 +5,7 @@ export default function ZoomControls() {
     <div className="ml-auto">
       <button onClick={onZoomIn} type="button">
         <svg
-          className="w-[25px] h-[25px] text-gray-800 dark:text-white"
+          className="w-[25px] h-[25px] text-gray-800"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -25,7 +25,7 @@ export default function ZoomControls() {
       </button>
       <button onClick={onZoomOut} type="button">
         <svg
-          className="w-[25px] h-[25px] text-gray-800 dark:text-white"
+          className="w-[25px] h-[25px] text-gray-800"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"

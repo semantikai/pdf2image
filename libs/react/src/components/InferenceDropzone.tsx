@@ -35,7 +35,10 @@ export default function InferenceDropzone({
   return (
     <div
       style={style}
-      className={twMerge("flex h-full w-full flex-col", className)}
+      className={twMerge(
+        "flex h-full w-full flex-col min-h-[300px] min-w-[300px] bg-gray-100",
+        className
+      )}
     >
       {inferenceDocRef.value ? (
         children

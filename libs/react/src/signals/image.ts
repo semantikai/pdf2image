@@ -32,11 +32,16 @@ const loadImage = (image: string) => {
 };
 
 effect(() => {
+  console.log("ccc", inferenceImageRef.value);
   if (inferenceImageRef.value) {
     inferenceProcessingDocRef.value = {
       isProcessing: true,
       message: "Drawing image...",
     };
     loadImage(inferenceImageRef.value);
+  } else {
+    if (imageLayerRef.value.children.length) {
+      imageLayerRef.value.destroyChildren();
+    }
   }
 });

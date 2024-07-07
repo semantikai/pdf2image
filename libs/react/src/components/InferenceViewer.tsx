@@ -2,7 +2,7 @@ import { CSSProperties, useEffect } from "react";
 import { Icons } from "@repo/ui/icons";
 import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
-import { containerRef } from "@/signals";
+import { containerRef, inferenceDocRef } from "@/signals";
 import { useSignalEffect, useSignals } from "@preact/signals-react/runtime";
 import { currentPageIndexRef, documentPages } from "@/signals/documentPages";
 import {
@@ -108,12 +108,47 @@ export default function InferenceViewer({
       boundingRegionsEventsRef.value = undefined;
     }
   });
+
+  const onClearStage = () => {
+    inferenceDocRef.value = undefined;
+    boundingRegionsRef.value = [];
+    currentPageIndexRef.value = 0;
+    zoomLevelRef.value = 1;
+  };
   return (
     <div
       style={style}
-      className={twMerge("flex h-full w-full flex-col relative", className)}
+      className={twMerge(
+        "flex h-full w-full flex-col relative min-h-[300px] min-w-[300px] bg-gray-100",
+        className
+      )}
     >
-      <Icons.close className="top-1 right-1" />
+      {inferenceDocRef.value && (
+        <button
+          onClick={onClearStage}
+          type="button"
+          className="absolute top-4 right-4 z-10"
+        >
+          <svg
+            className="w-6 h-6 text-gray-800 cursor-pointer"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6"
+            />
+          </svg>
+        </button>
+      )}
+
       {inferenceProcessingDocRef.value.isProcessing && (
         <Loader
           message={inferenceProcessingDocRef.value.message}
@@ -122,15 +157,17 @@ export default function InferenceViewer({
       )}
       {isLoading && <Loader message="Analyzing document..." hasError={false} />}
       <div
-        className="w-full h-full bg-gray-100 dark:bg-gray-800 min-h-[300px] min-w-[300px]"
+        className="w-full h-full "
         ref={(ref) => {
           containerRef.value = ref;
         }}
       />
-      <div className="flex items-center p-2">
-        <Pagination />
-        <ZoomControls />
-      </div>
+      {inferenceDocRef.value && (
+        <div className="flex items-center p-2 bg-white">
+          <Pagination />
+          <ZoomControls />
+        </div>
+      )}
     </div>
   );
 }
