@@ -9,7 +9,7 @@ export const metadata = {
   title: "Blog",
 }
 
-export default async function BlogPage() {
+export default async function BlogPage(): JSX.Element {
   const posts = allPosts
     .filter((post) => post.published)
     .sort((a, b) => {

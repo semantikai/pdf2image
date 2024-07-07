@@ -11,7 +11,7 @@ export const metadata = {
     "This section includes end-to-end guides for developing Next.js 13 apps.",
 }
 
-export default function GuidesPage() {
+export default function GuidesPage(): JSX.Element {
   const guides = allGuides
     .filter((guide) => guide.published)
     .sort((a, b) => {

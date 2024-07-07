@@ -13,7 +13,7 @@ export const metadata = {
   title: "Dashboard",
 }
 
-export default async function DashboardPage() {
+export default async function DashboardPage(): JSX.Element {
   const user = await getCurrentUser()
 
   if (!user) {

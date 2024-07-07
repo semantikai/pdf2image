@@ -32,7 +32,7 @@ async function getGitHubStars(): Promise<string | null> {
   }
 }
 
-export default async function IndexPage() {
+export default async function IndexPage(): JSX.Element {
   const stars = await getGitHubStars()
 
   return (

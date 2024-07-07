@@ -11,7 +11,7 @@ export const metadata = {
   description: "Manage account and website settings.",
 }
 
-export default async function SettingsPage() {
+export default async function SettingsPage(): JSX.Element {
   const user = await getCurrentUser()
 
   if (!user) {

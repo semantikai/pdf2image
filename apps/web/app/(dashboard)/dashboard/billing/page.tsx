@@ -22,7 +22,7 @@ export const metadata = {
   description: "Manage billing and your subscription plan.",
 }
 
-export default async function BillingPage() {
+export default async function BillingPage(): JSX.Element {
   const user = await getCurrentUser()
 
   if (!user) {
