@@ -29,18 +29,22 @@ export default function MindeeDocumentInferenceProviderExample({
         }}
         documentSrc={documentSrc}
       />
-      <InferenceFields className="space-y-4 bg-gray-100 p-4 rounded-lg overflow-y-auto">
+      <InferenceFields className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm overflow-y-auto w-[350px]">
         {(fields) =>
-          fields.map((field) => (
-            <InferenceFields.FieldViewer
-              style={{
-                backgroundColor:
-                  hoveredField === field.id ? "yellow" : "transparent",
-              }}
-              key={field.id}
-              field={field}
-            />
-          ))
+          fields.length ? (
+            fields.map((field) => (
+              <InferenceFields.FieldViewer
+                style={{
+                  backgroundColor:
+                    hoveredField === field.id ? "yellow" : "transparent",
+                }}
+                key={field.id}
+                field={field}
+              />
+            ))
+          ) : (
+            <div className="text-red-500">No fields found</div>
+          )
         }
       </InferenceFields>
     </MindeeDocumentInferenceProvider>

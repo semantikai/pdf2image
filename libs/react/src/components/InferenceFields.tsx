@@ -24,21 +24,24 @@ const FieldViewer = ({
   field: InferenceField;
 }) => (
   <div
-    style={style}
     className={twMerge(
-      className,
-      "flex flex-col p-4 bg-white shadow rounded-lg mb-4 last:mb-0"
+      "grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4 flex flex-col",
+      className
     )}
+    style={style}
   >
-    <label htmlFor={field.id} className="mb-2 font-bold text-sm text-gray-700">
-      {field.label}
-    </label>
-    <div id={field.id} className="mb-2 text-gray-600">
-      {field.content}
+    <div className="">
+      <dt className="font-medium text-gray-900">Label</dt>
+      <dd className="text-gray-500 sm:col-span-2">{field.label}</dd>
     </div>
-    <span className="text-xs text-gray-500">
-      Confidence: {field.confidence}
-    </span>
+    <div className="">
+      <dt className="font-medium text-gray-900">Content</dt>
+      <dd className="text-gray-500 sm:col-span-2">{field.content}</dd>
+    </div>
+    <div className="">
+      <dt className="font-medium text-gray-900">Confidence</dt>
+      <dd className="text-gray-500 sm:col-span-2">{field.confidence || "-"}</dd>
+    </div>
   </div>
 );
 
@@ -66,7 +69,9 @@ function InferenceFields({ children, fields = [], className }: Props) {
     }
   }, [fields]);
   return (
-    <div className={className}>
+    <div
+      className={twMerge("-my-3 divide-y divide-gray-100 text-sm", className)}
+    >
       {typeof children === "function"
         ? children(Array.from(inferenceFieldsRef.value.values()))
         : children}

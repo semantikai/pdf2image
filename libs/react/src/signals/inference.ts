@@ -27,6 +27,9 @@ effect(() => {
       inferenceResultRef.value.fields.map((e) => [e.id, e])
     );
     boundingRegionsRef.value = inferenceResultRef.value.boundingRegions;
+  } else {
+    inferenceFieldsRef.value = new Map<string, InferenceField>([]);
+    boundingRegionsRef.value = [];
   }
 });
 

@@ -1,5 +1,5 @@
 import { CSSProperties, useEffect } from "react";
-import { Icons } from "@repo/ui/icons";
+
 import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
 import { containerRef, inferenceDocRef } from "@/signals";
@@ -8,6 +8,7 @@ import { currentPageIndexRef, documentPages } from "@/signals/documentPages";
 import {
   boundingRegionsEventsRef,
   boundingRegionsRef,
+  inferenceResultRef,
 } from "@/signals/inference";
 import { inferenceProcessingDocRef } from "@/signals/documentPages";
 import { zoomLevelRef } from "@/signals/zoom";
@@ -33,6 +34,7 @@ type Props = {
   zoomLevel?: number;
   className?: string;
   isLoading?: boolean;
+  onClearClick?: () => void;
 };
 
 export default function InferenceViewer({
@@ -45,6 +47,7 @@ export default function InferenceViewer({
   zoomLevel,
   className,
   boundingRegionsEvents,
+  onClearClick,
 }: Props) {
   useSignals();
   useEffect(() => {
@@ -109,23 +112,24 @@ export default function InferenceViewer({
     }
   });
 
-  const onClearStage = () => {
+  const onClearInferenceData = () => {
     inferenceDocRef.value = undefined;
-    boundingRegionsRef.value = [];
+    inferenceResultRef.value = undefined;
     currentPageIndexRef.value = 0;
     zoomLevelRef.value = 1;
+    onClearClick?.();
   };
   return (
     <div
       style={style}
       className={twMerge(
-        "flex h-full w-full flex-col relative min-h-[300px] min-w-[300px] bg-gray-100",
+        "flex h-full w-full flex-col relative min-h-[500px] min-w-[300px]",
         className
       )}
     >
       {inferenceDocRef.value && (
         <button
-          onClick={onClearStage}
+          onClick={onClearInferenceData}
           type="button"
           className="absolute top-4 right-4 z-10"
         >
@@ -157,7 +161,7 @@ export default function InferenceViewer({
       )}
       {isLoading && <Loader message="Analyzing document..." hasError={false} />}
       <div
-        className="w-full h-full "
+        className="w-full h-full"
         ref={(ref) => {
           containerRef.value = ref;
         }}

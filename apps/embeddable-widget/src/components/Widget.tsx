@@ -30,7 +30,7 @@ export default function Widget() {
   };
   return (
     <MindeeDocumentInferenceProvider loadAsyncInference={loadAsyncInference}>
-      <InferenceDropzone className="h-[800px]">
+      <InferenceDropzone>
         <InferenceViewer isLoading={isLoading} />
       </InferenceDropzone>
     </MindeeDocumentInferenceProvider>

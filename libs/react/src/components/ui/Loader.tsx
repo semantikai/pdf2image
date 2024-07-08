@@ -9,12 +9,12 @@ export default function Loader({
 }) {
   return (
     <div
-      className="absolute h-full w-full z-10 flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90"
+      className="absolute h-full w-full z-10 flex flex-col items-center justify-center bg-gray-100  bg-opacity-90 dark:bg-opacity-90"
       role="status"
     >
       <svg
         aria-hidden="true"
-        className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+        className="w-8 h-8 text-gray-200 animate-spin fill-blue-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
