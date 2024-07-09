@@ -1,0 +1,539 @@
+{
+  "api_request": {
+    "error": {},
+    "resources": ["document"],
+    "status": "success",
+    "status_code": 201,
+    "url": "https://api.mindee.net/v1/products/mindee/invoices/v4/predict"
+  },
+  "document": {
+    "id": "1b2ae8f5-0980-4488-b5a5-5a8547a090d2",
+    "inference": {
+      "extras": {},
+      "finished_at": "2024-07-08T12:02:17.831356",
+      "is_rotation_applied": true,
+      "pages": [
+        {
+          "extras": {},
+          "id": 0,
+          "orientation": {
+            "value": 0
+          },
+          "prediction": {
+            "billing_address": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.283, 0.358],
+                [0.373, 0.358],
+                [0.373, 0.393],
+                [0.283, 0.393]
+              ],
+              "value": "123 Bill St, Redmond WA, 98052"
+            },
+            "customer_address": {
+              "confidence": 0.98,
+              "polygon": [
+                [0.283, 0.255],
+                [0.373, 0.255],
+                [0.373, 0.292],
+                [0.283, 0.292]
+              ],
+              "value": "123 Other St, Redmond WA, 98052"
+            },
+            "customer_company_registrations": [],
+            "customer_id": {
+              "confidence": 0,
+              "polygon": [],
+              "value": null
+            },
+            "customer_name": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.283, 0.237],
+                [0.347, 0.237],
+                [0.347, 0.254],
+                [0.283, 0.254]
+              ],
+              "raw_value": "Microsoft Corp",
+              "value": "MICROSOFT CORP"
+            },
+            "date": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.673, 0.143],
+                [0.722, 0.143],
+                [0.722, 0.161],
+                [0.673, 0.161]
+              ],
+              "value": "2019-11-15"
+            },
+            "document_type": {
+              "value": "INVOICE"
+            },
+            "due_date": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.674, 0.163],
+                [0.722, 0.163],
+                [0.722, 0.18],
+                [0.674, 0.18]
+              ],
+              "value": "2019-12-15"
+            },
+            "invoice_number": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.688, 0.126],
+                [0.721, 0.126],
+                [0.721, 0.142],
+                [0.688, 0.142]
+              ],
+              "value": "INV-100"
+            },
+            "line_items": [
+              {
+                "confidence": 0.99,
+                "description": "Consulting Services",
+                "polygon": [
+                  [0.344, 0.508],
+                  [0.716, 0.508],
+                  [0.716, 0.537],
+                  [0.344, 0.537]
+                ],
+                "product_code": "A123",
+                "quantity": 2,
+                "tax_amount": 6,
+                "tax_rate": null,
+                "total_amount": 60,
+                "unit_price": 30
+              },
+              {
+                "confidence": 0.99,
+                "description": "Document Fee",
+                "polygon": [
+                  [0.344, 0.534],
+                  [0.716, 0.534],
+                  [0.716, 0.565],
+                  [0.344, 0.565]
+                ],
+                "product_code": "B456",
+                "quantity": 3,
+                "tax_amount": 3,
+                "tax_rate": null,
+                "total_amount": 30,
+                "unit_price": 10
+              },
+              {
+                "confidence": 0.99,
+                "description": "Printing Fee",
+                "polygon": [
+                  [0.345, 0.561],
+                  [0.716, 0.561],
+                  [0.716, 0.592],
+                  [0.345, 0.592]
+                ],
+                "product_code": "c789",
+                "quantity": 10,
+                "tax_amount": 1,
+                "tax_rate": null,
+                "total_amount": 10,
+                "unit_price": 1
+              }
+            ],
+            "locale": {
+              "confidence": 0.84,
+              "currency": "USD",
+              "language": "en"
+            },
+            "orientation": {
+              "confidence": 0.98,
+              "degrees": 0
+            },
+            "reference_numbers": [
+              {
+                "confidence": 0.99,
+                "polygon": [
+                  [0.36, 0.444],
+                  [0.399, 0.444],
+                  [0.399, 0.461],
+                  [0.36, 0.461]
+                ],
+                "value": "PO-3333"
+              }
+            ],
+            "shipping_address": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.444, 0.357],
+                [0.533, 0.357],
+                [0.533, 0.393],
+                [0.444, 0.393]
+              ],
+              "value": "123 Ship St, Redmond WA, 98052"
+            },
+            "supplier_address": {
+              "confidence": 0.96,
+              "polygon": [
+                [0.283, 0.143],
+                [0.372, 0.143],
+                [0.372, 0.182],
+                [0.283, 0.182]
+              ],
+              "value": "123456th St New York, NY,, 1 10001"
+            },
+            "supplier_company_registrations": [],
+            "supplier_email": {
+              "confidence": 0,
+              "polygon": [],
+              "value": null
+            },
+            "supplier_name": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.283, 0.057],
+                [0.392, 0.057],
+                [0.392, 0.081],
+                [0.283, 0.081]
+              ],
+              "raw_value": "CONTOSO LTD",
+              "value": "CONTOSO LTD"
+            },
+            "supplier_payment_details": [],
+            "supplier_phone_number": {
+              "confidence": 0,
+              "polygon": [],
+              "value": null
+            },
+            "supplier_website": {
+              "confidence": 0,
+              "polygon": [],
+              "value": null
+            },
+            "taxes": [
+              {
+                "base": null,
+                "confidence": 0.98,
+                "polygon": [
+                  [0.513, 0.537],
+                  [0.628, 0.537],
+                  [0.628, 0.589],
+                  [0.513, 0.589]
+                ],
+                "rate": 10,
+                "value": 10
+              }
+            ],
+            "total_amount": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.68, 0.676],
+                [0.717, 0.676],
+                [0.717, 0.696],
+                [0.68, 0.696]
+              ],
+              "value": 110
+            },
+            "total_net": {
+              "confidence": 0.99,
+              "polygon": [
+                [0.679, 0.621],
+                [0.717, 0.621],
+                [0.717, 0.641],
+                [0.679, 0.641]
+              ],
+              "value": 100
+            },
+            "total_tax": {
+              "confidence": 0.98,
+              "polygon": [],
+              "value": 10
+            }
+          }
+        }
+      ],
+      "prediction": {
+        "billing_address": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.283, 0.358],
+            [0.373, 0.358],
+            [0.373, 0.393],
+            [0.283, 0.393]
+          ],
+          "value": "123 Bill St, Redmond WA, 98052"
+        },
+        "customer_address": {
+          "confidence": 0.98,
+          "page_id": 0,
+          "polygon": [
+            [0.283, 0.255],
+            [0.373, 0.255],
+            [0.373, 0.292],
+            [0.283, 0.292]
+          ],
+          "value": "123 Other St, Redmond WA, 98052"
+        },
+        "customer_company_registrations": [],
+        "customer_id": {
+          "confidence": 0,
+          "page_id": null,
+          "polygon": [],
+          "value": null
+        },
+        "customer_name": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.283, 0.237],
+            [0.347, 0.237],
+            [0.347, 0.254],
+            [0.283, 0.254]
+          ],
+          "raw_value": "Microsoft Corp",
+          "value": "MICROSOFT CORP"
+        },
+        "date": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.673, 0.143],
+            [0.722, 0.143],
+            [0.722, 0.161],
+            [0.673, 0.161]
+          ],
+          "value": "2019-11-15"
+        },
+        "document_type": {
+          "value": "INVOICE"
+        },
+        "due_date": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.674, 0.163],
+            [0.722, 0.163],
+            [0.722, 0.18],
+            [0.674, 0.18]
+          ],
+          "value": "2019-12-15"
+        },
+        "invoice_number": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.688, 0.126],
+            [0.721, 0.126],
+            [0.721, 0.142],
+            [0.688, 0.142]
+          ],
+          "value": "INV-100"
+        },
+        "line_items": [
+          {
+            "confidence": 0.99,
+            "description": "Consulting Services",
+            "page_id": 0,
+            "polygon": [
+              [0.344, 0.508],
+              [0.716, 0.508],
+              [0.716, 0.537],
+              [0.344, 0.537]
+            ],
+            "product_code": "A123",
+            "quantity": 2,
+            "tax_amount": 6,
+            "tax_rate": null,
+            "total_amount": 60,
+            "unit_price": 30
+          },
+          {
+            "confidence": 0.99,
+            "description": "Document Fee",
+            "page_id": 0,
+            "polygon": [
+              [0.344, 0.534],
+              [0.716, 0.534],
+              [0.716, 0.565],
+              [0.344, 0.565]
+            ],
+            "product_code": "B456",
+            "quantity": 3,
+            "tax_amount": 3,
+            "tax_rate": null,
+            "total_amount": 30,
+            "unit_price": 10
+          },
+          {
+            "confidence": 0.99,
+            "description": "Printing Fee",
+            "page_id": 0,
+            "polygon": [
+              [0.345, 0.561],
+              [0.716, 0.561],
+              [0.716, 0.592],
+              [0.345, 0.592]
+            ],
+            "product_code": "c789",
+            "quantity": 10,
+            "tax_amount": 1,
+            "tax_rate": null,
+            "total_amount": 10,
+            "unit_price": 1
+          }
+        ],
+        "locale": {
+          "confidence": 0.84,
+          "currency": "USD",
+          "language": "en"
+        },
+        "reference_numbers": [
+          {
+            "confidence": 0.99,
+            "page_id": 0,
+            "polygon": [
+              [0.36, 0.444],
+              [0.399, 0.444],
+              [0.399, 0.461],
+              [0.36, 0.461]
+            ],
+            "value": "PO-3333"
+          }
+        ],
+        "shipping_address": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.444, 0.357],
+            [0.533, 0.357],
+            [0.533, 0.393],
+            [0.444, 0.393]
+          ],
+          "value": "123 Ship St, Redmond WA, 98052"
+        },
+        "supplier_address": {
+          "confidence": 0.96,
+          "page_id": 0,
+          "polygon": [
+            [0.283, 0.143],
+            [0.372, 0.143],
+            [0.372, 0.182],
+            [0.283, 0.182]
+          ],
+          "value": "123456th St New York, NY,, 1 10001"
+        },
+        "supplier_company_registrations": [],
+        "supplier_email": {
+          "confidence": 0,
+          "page_id": null,
+          "polygon": [],
+          "value": null
+        },
+        "supplier_name": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.283, 0.057],
+            [0.392, 0.057],
+            [0.392, 0.081],
+            [0.283, 0.081]
+          ],
+          "raw_value": "CONTOSO LTD",
+          "value": "CONTOSO LTD"
+        },
+        "supplier_payment_details": [],
+        "supplier_phone_number": {
+          "confidence": 0,
+          "page_id": null,
+          "polygon": [],
+          "value": null
+        },
+        "supplier_website": {
+          "confidence": 0,
+          "page_id": null,
+          "polygon": [],
+          "value": null
+        },
+        "taxes": [
+          {
+            "base": null,
+            "confidence": 0.98,
+            "page_id": 0,
+            "polygon": [
+              [0.513, 0.537],
+              [0.628, 0.537],
+              [0.628, 0.589],
+              [0.513, 0.589]
+            ],
+            "rate": 10,
+            "value": 10
+          }
+        ],
+        "total_amount": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.68, 0.676],
+            [0.717, 0.676],
+            [0.717, 0.696],
+            [0.68, 0.696]
+          ],
+          "value": 110
+        },
+        "total_net": {
+          "confidence": 0.99,
+          "page_id": 0,
+          "polygon": [
+            [0.679, 0.621],
+            [0.717, 0.621],
+            [0.717, 0.641],
+            [0.679, 0.641]
+          ],
+          "value": 100
+        },
+        "total_tax": {
+          "confidence": 0.98,
+          "page_id": 0,
+          "polygon": [],
+          "value": 10
+        }
+      },
+      "processing_time": 1.014,
+      "product": {
+        "features": [
+          "locale",
+          "invoice_number",
+          "reference_numbers",
+          "date",
+          "due_date",
+          "total_net",
+          "total_amount",
+          "total_tax",
+          "taxes",
+          "supplier_payment_details",
+          "supplier_name",
+          "supplier_company_registrations",
+          "supplier_address",
+          "supplier_phone_number",
+          "supplier_website",
+          "supplier_email",
+          "customer_name",
+          "customer_company_registrations",
+          "customer_address",
+          "customer_id",
+          "shipping_address",
+          "billing_address",
+          "document_type",
+          "orientation",
+          "line_items"
+        ],
+        "name": "mindee/invoices",
+        "type": "standard",
+        "version": "4.6"
+      },
+      "started_at": "2024-07-08T12:02:16.817525"
+    },
+    "n_pages": 1,
+    "name": "download.png"
+  }
+}

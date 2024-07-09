@@ -1,7 +1,7 @@
 import { InferenceResult } from "@/types";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   inferenceResponse: AzureInferenceResponse;
 }
 

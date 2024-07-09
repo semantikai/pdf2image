@@ -7,7 +7,7 @@ import { useDropzone } from "react-dropzone";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   onDropFile?: (inferenceDoc: InferenceDoc) => void;
   className?: string;
   style?: CSSProperties;
@@ -46,33 +46,36 @@ export default function InferenceDropzone({
       )}
       {...getRootProps()}
     >
-      <input {...getInputProps()} aria-label="File upload" />
       {inferenceDocRef.value ? (
         children
       ) : (
-        <div className="text-center">
-          <svg
-            className="mx-auto w-10 h-10 text-gray-400"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M12 5v9m-5 0H5a1 1 0 001 1h12a1 1 0 001-1h-2M8 9l4-5 4 5m1 8h.01"></path>
-          </svg>
-          <p className="mt-2 text-sm text-gray-600">
-            {isDragActive ? (
-              <span className="font-semibold">Release to upload</span>
-            ) : (
-              <>
-                <span className="font-semibold">Drag and drop</span> files here,
-                or <span className="font-semibold">click to select</span> files
-              </>
-            )}
-          </p>
-        </div>
+        <>
+          <input {...getInputProps()} aria-label="File upload" />
+          <div className="text-center">
+            <svg
+              className="mx-auto w-10 h-10 text-gray-400"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 5v9m-5 0H5a1 1 0 001 1h12a1 1 0 001-1h-2M8 9l4-5 4 5m1 8h.01"></path>
+            </svg>
+            <p className="mt-2 text-sm text-gray-600">
+              {isDragActive ? (
+                <span className="font-semibold">Release to upload</span>
+              ) : (
+                <>
+                  <span className="font-semibold">Drag and drop</span> files
+                  here, or{" "}
+                  <span className="font-semibold">click to select</span> files
+                </>
+              )}
+            </p>
+          </div>
+        </>
       )}
     </div>
   );

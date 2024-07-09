@@ -75,7 +75,9 @@ export const useMindeeDocumentInferenceProvider = (
 };
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
+  style?: CSSProperties;
+  className?: string;
 } & Exclusive<
   { inference: MindeeInferenceResponse },
   {
@@ -87,10 +89,11 @@ type Props = {
 export default function MindeeDocumentInferenceProvider({
   children,
   inference,
+  className,
+  style,
   loadAsyncInference,
 }: Props) {
   const props = useMemo(() => {
-    console.log("props");
     if (inference) {
       return { inference: getInferenceResult(inference) };
     }
@@ -105,6 +108,9 @@ export default function MindeeDocumentInferenceProvider({
       },
     };
   }, [inference, loadAsyncInference]);
-  console.log("MindeeDocumentInferenceProvider");
-  return <InferenceProvider {...props}>{children}</InferenceProvider>;
+  return (
+    <InferenceProvider className={className} style={style} {...props}>
+      {children}
+    </InferenceProvider>
+  );
 }

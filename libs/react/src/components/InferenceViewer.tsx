@@ -39,7 +39,7 @@ type Props = {
 
 export default function InferenceViewer({
   isLoading = false,
-  style,
+  style = {},
   documentSrc,
   boundingRegions = [],
   getTotalPages,
@@ -121,11 +121,8 @@ export default function InferenceViewer({
   };
   return (
     <div
-      style={style}
-      className={twMerge(
-        "flex h-full w-full flex-col relative min-h-[500px] min-w-[300px]",
-        className
-      )}
+      style={{ minHeight: "inherit", ...style }}
+      className={twMerge("flex flex-col relative w-full h-full", className)}
     >
       {inferenceDocRef.value && (
         <button
@@ -161,7 +158,7 @@ export default function InferenceViewer({
       )}
       {isLoading && <Loader message="Analyzing document..." hasError={false} />}
       <div
-        className="w-full h-full"
+        className="h-full w-full flex-1"
         ref={(ref) => {
           containerRef.value = ref;
         }}

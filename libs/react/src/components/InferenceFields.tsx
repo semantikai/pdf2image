@@ -11,7 +11,7 @@ interface FieldProps {
     status?: keyof BoundingRegionsEvents
   ) => ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 const FieldViewer = ({
@@ -20,7 +20,7 @@ const FieldViewer = ({
   className,
 }: {
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   field: InferenceField;
 }) => (
   <div

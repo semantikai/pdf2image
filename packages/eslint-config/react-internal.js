@@ -5,7 +5,7 @@ const project = resolve(process.cwd(), "tsconfig.json");
 /*
  * This is a custom ESLint configuration for use with
  * internal (bundled by their consumer) libraries
- * that utilize React.
+ * that utilize
  */
 
 /** @type {import("eslint").Linter.Config} */
