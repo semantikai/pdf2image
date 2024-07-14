@@ -36,6 +36,7 @@ export const t = initTRPC.context<typeof createTRPCContext>().create({
 });
 
 export const createTRPCRouter = t.router;
+export const createCallerFactory = t.createCallerFactory;
 export const procedure = t.procedure;
 export const mergeRouters = t.mergeRouters;
 

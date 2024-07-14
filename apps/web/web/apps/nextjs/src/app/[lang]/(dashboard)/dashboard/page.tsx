@@ -17,7 +17,7 @@ import { ClusterItem } from "~/components/k8s/cluster-item";
 import { DashboardShell } from "~/components/shell";
 import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
-import { trpc } from "~/trpc/server";
+import { trpc } from "~/trpc/client";
 import type { ClustersArray } from "~/types/k8s";
 
 export const dynamic = "force-dynamic";
@@ -37,12 +37,13 @@ export default async function DashboardPage({
   //don't need to check auth here, because we have a global auth check in _app.tsx
   const user = await getCurrentUser();
   if (!user) {
+    console.log("redirect to login");
     redirect(authOptions?.pages?.signIn ?? "/login");
   }
-  const customer = await trpc.customer.queryCustomer.query({
-    userId: user.id,
-  });
-  if (!customer) {
+  //   const customer = await trpc.customer.queryCustomer.query({
+  //     userId: user.id,
+  //   });
+  if (true) {
     await trpc.customer.insertCustomer.mutate({
       userId: user.id,
     });

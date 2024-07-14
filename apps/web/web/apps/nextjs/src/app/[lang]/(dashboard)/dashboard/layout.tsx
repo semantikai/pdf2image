@@ -26,7 +26,9 @@ export default async function DashboardLayout({
   children,
   params: { lang },
 }: DashboardLayoutProps) {
+  console.log("lang", lang);
   const user = await getCurrentUser();
+  console.log("user", user);
   const dict = await getDictionary(lang);
   if (!user) {
     return notFound();

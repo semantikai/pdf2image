@@ -47,26 +47,30 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
 
   async function onSubmit(data: FormData) {
     setIsSaving(true);
-
-    const response = await trpc.customer.updateUserName.mutate({
-      name: data.name,
+    const customer = await trpc.customer.queryCustomer.query({
       userId: user.id,
     });
-    setIsSaving(false);
+    console.log("cutomer", customer);
+    // const response = await trpc.customer.updateUserName.mutate({
+    //   name: data.name,
+    //   userId: user.id,
+    // });
+    // console.warn("response", response);
+    // setIsSaving(false);
 
-    if (!response?.success) {
-      return toast({
-        title: "Something went wrong.",
-        description: "Your name was not updated. Please try again.",
-        variant: "destructive",
-      });
-    }
+    // if (!response?.success) {
+    //   return toast({
+    //     title: "Something went wrong.",
+    //     description: "Your name was not updated. Please try again.",
+    //     variant: "destructive",
+    //   });
+    // }
 
     toast({
       description: "Your name has been updated.",
     });
 
-    router.refresh();
+    // router.refresh();
   }
 
   return (

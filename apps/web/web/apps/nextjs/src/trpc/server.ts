@@ -2,9 +2,15 @@ import { cookies } from "next/headers";
 import { loggerLink } from "@trpc/client";
 import { experimental_nextHttpLink } from "@trpc/next/app-dir/links/nextHttp";
 import { experimental_createTRPCNextAppDirServer } from "@trpc/next/app-dir/server";
+import { createServerSideHelpers } from "@trpc/react-query/server";
 import superjson from "superjson";
 
-import type { AppRouter } from "@saasfly/api";
+import {
+  createCallerFactory,
+  createInnerTRPCContext,
+  type AppRouter,
+} from "@saasfly/api";
+import { appRouter } from "@saasfly/api/root";
 
 import { getUrl } from "~/trpc/shared";
 
@@ -33,4 +39,7 @@ export const trpc = experimental_createTRPCNextAppDirServer<AppRouter>({
     };
   },
 });
+
+export const callerFactory = createCallerFactory(appRouter);
+
 export { type RouterInputs, type RouterOutputs } from "@saasfly/api";

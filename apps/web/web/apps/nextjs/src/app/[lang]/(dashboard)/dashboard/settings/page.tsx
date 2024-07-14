@@ -5,6 +5,9 @@ import { authOptions, getCurrentUser } from "@saasfly/auth";
 import { DashboardHeader } from "~/components/header";
 import { DashboardShell } from "~/components/shell";
 import { UserNameForm } from "~/components/user-name-form";
+import { callerFactory } from "~/trpc/server";
+import { getRequestMeta } from "next/dist/server/request-meta";
+import { headers } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +18,10 @@ export const metadata = {
 
 export default async function SettingsPage() {
   const user = await getCurrentUser();
+  const header = headers()
+  const caller = callerFactory({ req: undefined });
+  const response = await caller.hello.hello({ text: "world" });
+  console.log({ response });
   if (!user) {
     redirect(authOptions?.pages?.signIn ?? "/login");
   }
