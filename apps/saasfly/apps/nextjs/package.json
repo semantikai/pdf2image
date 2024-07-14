@@ -5,7 +5,8 @@
   "scripts": {
     "build": "contentlayer2 build && bun with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "bun with-env next dev",
+    "generate:cert": "mkcert localhost",
+    "dev": "bun with-env next dev --experimental-https --experimental-https-key ./localhost-key.pem --experimental-https-cert ./localhost.pem",
     "lint": " bun with-env next lint --quiet",
     "format": "prettier --write '**/*.{js,cjs,mjs,ts,tsx,md,json}'  --ignore-path .prettierignore",
     "start": "bun with-env next start",
