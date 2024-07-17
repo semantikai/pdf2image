@@ -1,15 +1,17 @@
 {
-  "name": "semantik",
+  "name": "@semantik/root",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@semantik/eslint-config": "workspace:*",
+    "@semantik/typescript-config": "workspace:*",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },

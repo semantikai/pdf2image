@@ -1,14 +1,14 @@
 "use client";
-import "@repo/react/dist/style.css";
+import "@semantik/react/dist/style.css";
 import {
   InferenceDropzone,
   InferenceFields,
   InferenceViewer,
   MindeeDocumentInferenceProvider,
-} from "@repo/react";
-import { BoundingRegion, InferenceDoc } from "@repo/react/dist/types";
+} from "@semantik/react";
+import { BoundingRegion, InferenceDoc } from "@semantik/react/dist/types";
 import { useState } from "react";
-import { MindeeInferenceResponse } from "@repo/react/dist/components/providers/MindeeDocumentInferenceProvider";
+import { MindeeInferenceResponse } from "@semantik/react/dist/components/providers/MindeeDocumentInferenceProvider";
 import getInferenceAction from "@/actions/getInference";
 import { useSignal } from "@preact/signals-react";
 import dummyResponse from "./response.json";
@@ -21,21 +21,20 @@ export default function Widget({}: Props) {
   const loadAsyncInference = async (
     inferenceDoc: InferenceDoc
   ): Promise<MindeeInferenceResponse | undefined> => {
-    "use server";
     return dummyResponse.document.inference as any;
-    setIsLoading(true);
-    if (!inferenceDoc.file) return;
-    const data = new FormData();
-    data.append("document", inferenceDoc.file, inferenceDoc.file.name);
-    try {
-      const response = await getInferenceAction({ data, product: "invoice" });
-      console.log(response);
-      return response.document.inference;
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
+    // setIsLoading(true);
+    // if (!inferenceDoc.file) return;
+    // const data = new FormData();
+    // data.append("document", inferenceDoc.file, inferenceDoc.file.name);
+    // try {
+    //   const response = await getInferenceAction({ data, product: "invoice" });
+    //   console.log(response);
+    //   return response.document.inference;
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   setIsLoading(false);
+    // }
   };
   const onMouseEnter = (boundingRegion: BoundingRegion) => {
     hoveredField.value = boundingRegion.id;

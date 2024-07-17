@@ -1,7 +1,7 @@
 import { inferenceFieldsRef } from "@/signals/inference";
 import type { BoundingRegionsEvents, InferenceField } from "@/types";
 import { useSignals } from "@preact/signals-react/runtime";
-import { ReactNode, useEffect } from "react";
+import { CSSProperties, ReactNode, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface FieldProps {

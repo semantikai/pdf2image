@@ -1,4 +1,5 @@
 import { InferenceResult } from "@/types";
+import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;

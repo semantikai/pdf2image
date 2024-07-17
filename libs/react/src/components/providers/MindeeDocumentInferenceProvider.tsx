@@ -1,7 +1,7 @@
 import { InferenceDoc, InferenceField, InferenceResult } from "@/types";
 import InferenceProvider from "../InferenceProvider";
 import { Exclusive } from "@/types/utils";
-import { useMemo } from "react";
+import { CSSProperties, ReactNode, useMemo } from "react";
 
 type Field = {
   value: string;

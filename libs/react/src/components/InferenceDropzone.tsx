@@ -2,7 +2,7 @@ import { inferenceDocRef } from "@/signals";
 import { InferenceDoc } from "@/types";
 import { getInferenceDocFromFile } from "@/utils/inferenceDocument";
 import { useSignals } from "@preact/signals-react/runtime";
-import { CSSProperties, useCallback } from "react";
+import { CSSProperties, ReactNode, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { twMerge } from "tailwind-merge";
 

@@ -2,11 +2,11 @@ module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
-    "@repo/eslint-config/react-internal.js",
+    "@semantik/eslint-config/react-internal.js",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
