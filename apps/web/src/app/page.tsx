@@ -1,13 +1,37 @@
-import { Button } from "@mantine/core";
-import Image from "next/image";
-import Link from "next/link";
+import { Container, Text, Button, Group } from "@mantine/core";
+
+import AppComposer from "@/components/app-composer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href="/hello" passHref>
-        <Button component="a">Next link button</Button>
-      </Link>
-    </main>
+    <Container
+      h="100vh"
+      display="flex"
+      component="main"
+      size={1100}
+      style={{ flexDirection: "column", justifyContent: "center" }}
+    >
+      <Text fz={35} fw={700}>
+        A{" "}
+        <Text
+          fw={800}
+          fz={40}
+          component="span"
+          variant="gradient"
+          gradient={{ from: "blue", to: "green" }}
+          inherit
+        >
+          fully featured
+        </Text>{" "}
+        Frontend SDK for Document Processing
+      </Text>
+
+      <Text color="dimmed">
+        Streamline your document processing workflow like never before with our
+        powerful Frontend SDK.
+      </Text>
+
+      <AppComposer />
+    </Container>
   );
 }
