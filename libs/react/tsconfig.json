@@ -2,7 +2,7 @@
   "extends": "@semantik/typescript-config/base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "module": "esnext",
+    "module": "ES2022",
     "lib": ["dom", "esnext"],
     "outDir": "dist",
     "baseUrl": "./src",

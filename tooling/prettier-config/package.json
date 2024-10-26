@@ -14,8 +14,7 @@
     "prettier-plugin-tailwindcss": "0.5.13"
   },
   "devDependencies": {
-    "@semantik/typescript-config": "workspace:*",
-    "typescript": "5.4.5"
+    "@semantik/typescript-config": "workspace:*"
   },
   "prettier": "@semantik/prettier-config"
 }

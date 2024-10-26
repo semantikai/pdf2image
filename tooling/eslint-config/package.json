@@ -28,8 +28,7 @@
   "devDependencies": {
     "@semantik/prettier-config": "workspace:*",
     "@semantik/typescript-config": "workspace:*",
-    "eslint": "8.57.0",
-    "typescript": "5.4.5"
+    "eslint": "8.57.0"
   },
   "eslintConfig": {
     "root": true,
