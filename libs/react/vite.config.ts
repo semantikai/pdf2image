@@ -6,7 +6,13 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts(), nodeExternals()],
+  plugins: [
+    react(),
+    dts({
+      insertTypesEntry: true,
+    }),
+    nodeExternals(),
+  ],
   resolve: {
     alias: {
       "@/": new URL("./src/", import.meta.url).pathname,

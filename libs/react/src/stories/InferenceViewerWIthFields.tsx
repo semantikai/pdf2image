@@ -1,4 +1,4 @@
-import { InferenceViewer, InferenceFields } from "@/main";
+import { InferenceViewer, InferenceData } from "@/main";
 import { InferenceResult } from "@/types";
 
 interface Props {
@@ -16,11 +16,11 @@ export default function InferenceViewerWithFields({
         documentSrc={documentSrc}
         boundingRegions={inferenceResult.boundingRegions}
       />
-      <InferenceFields fields={inferenceResult.fields}>
-        <InferenceFields.Field id="TotalTax">
+      <InferenceData fields={inferenceResult.fields}>
+        <InferenceData.Field id="TotalTax">
           {(field) => <div>{field.content}</div>}
-        </InferenceFields.Field>
-      </InferenceFields>
+        </InferenceData.Field>
+      </InferenceData>
     </div>
   );
 }

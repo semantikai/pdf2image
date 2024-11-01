@@ -4,16 +4,6 @@ import { useSignals } from "@preact/signals-react/runtime";
 import { CSSProperties, ReactNode, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface FieldProps {
-  id: string;
-  children?: (
-    field: InferenceField,
-    status?: keyof BoundingRegionsEvents
-  ) => ReactNode;
-  className?: string;
-  style?: CSSProperties;
-}
-
 const FieldViewer = ({
   field,
   style,
@@ -45,7 +35,19 @@ const FieldViewer = ({
   </div>
 );
 
-function Field({ id, children, ...props }: FieldProps) {
+function Field({
+  id,
+  children,
+  ...props
+}: {
+  id: string;
+  children?: (
+    field: InferenceField,
+    status?: keyof BoundingRegionsEvents
+  ) => ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}) {
   useSignals();
   const field = inferenceFieldsRef.value.get(id);
 
@@ -59,7 +61,7 @@ interface Props {
   className?: string;
 }
 
-function InferenceFields({ children, fields = [], className }: Props) {
+function InferenceData({ children, fields = [], className }: Props) {
   useSignals();
   useEffect(() => {
     if (fields.length) {
@@ -79,7 +81,7 @@ function InferenceFields({ children, fields = [], className }: Props) {
   );
 }
 
-InferenceFields.Field = Field;
-InferenceFields.FieldViewer = FieldViewer;
+InferenceData.Field = Field;
+InferenceData.FieldViewer = FieldViewer;
 
-export default InferenceFields;
+export default InferenceData;

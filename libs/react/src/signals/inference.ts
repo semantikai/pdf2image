@@ -3,12 +3,20 @@ import {
   InferenceResult,
   BoundingRegion,
   BoundingRegionsEventKeys,
+  InferenceDoc,
 } from "@/types";
 import { effect, signal } from "@preact/signals-react";
 import drawPolygons from "@/utils/drawPolygons";
 import { inferenceImageRef } from "./image";
 import { currentPageIndexRef } from "./documentPages";
-import { shapesLayerRef } from "@/signals";
+import { Stage } from "konva/lib/Stage";
+import { Layer } from "konva/lib/Layer";
+
+export const stageRef = signal<Stage | undefined>(undefined);
+export const shapesLayerRef = signal<Layer>(new Layer());
+export const containerRef = signal<HTMLDivElement | null>(null);
+
+
 
 export const inferenceResultRef = signal<InferenceResult | undefined>(
   undefined

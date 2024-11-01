@@ -1,6 +1,7 @@
 import { KonvaEventObject } from "konva/lib/Node";
 import { lerp, roundTo } from "./shared";
-import { imageBoundingBoxRef, stageRef } from "@/signals";
+import { stageRef } from "@/signals/inference";
+import { imageBoundingBoxRef } from "@/signals/image";
 
 const MAX_ZOOM = 10;
 const ZOOM_STEP = 1.05;

@@ -1,12 +1,9 @@
-import {
-  containerRef,
-  stageRef,
-  imageLayerRef,
-  shapesLayerRef,
-} from "@/signals";
 import { Stage } from "konva/lib/Stage";
 import { applyStageZoom } from "./applyStageZoom";
 import resizeStage from "./resizeStage";
+import { imageLayerRef } from "@/signals/image";
+import { containerRef, stageRef, shapesLayerRef } from "@/signals/inference";
+import { inferenceDocRef } from "@/signals";
 
 export function initCanvas() {
   if (containerRef.value) {
@@ -20,9 +17,7 @@ export function initCanvas() {
 }
 
 export function destroyCanvas() {
-  //   containerRef.value = null;
-  //   inferenceDocRef.value = undefined;
-  //   stageRef.value?.destroy();
-  //   window.removeEventListener("resize", resizeStage);
-  //   clearInferenceProcessingDoc();
+  inferenceDocRef.value = undefined;
+  stageRef.value?.destroy();
+  window.removeEventListener("resize", resizeStage);
 }

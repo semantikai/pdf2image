@@ -1,8 +1,12 @@
 import { Line } from "konva/lib/shapes/Line.js";
 import { BoundingRegion } from "@/types";
-import { shapesLayerRef, stageRef } from "@/signals";
+
 import convertCoordinatesToFlatArray from "./convertCoordinatesToFlatArray";
-import { boundingRegionsEventsRef } from "@/signals/inference";
+import {
+  boundingRegionsEventsRef,
+  shapesLayerRef,
+  stageRef,
+} from "@/signals/inference";
 import { ShapeConfig } from "konva/lib/Shape";
 
 const generatePolygon = ({ id, polygon, style }: BoundingRegion) =>

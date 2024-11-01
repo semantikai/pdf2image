@@ -2,7 +2,7 @@
 import "@semantik/react/dist/style.css";
 import {
   InferenceDropzone,
-  InferenceFields,
+  InferenceData,
   InferenceViewer,
   MindeeDocumentInferenceProvider,
 } from "@semantik/react";
@@ -53,11 +53,11 @@ export default function Widget({}: Props) {
           isLoading={isLoading}
         />
       </InferenceDropzone>
-      <InferenceFields className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm overflow-y-auto w-[350px]">
+      <InferenceData className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm overflow-y-auto w-[350px]">
         {(fields) =>
           fields.length ? (
             fields.map((field) => (
-              <InferenceFields.FieldViewer
+              <InferenceData.FieldViewer
                 style={{
                   backgroundColor:
                     hoveredField.value === field.id ? "yellow" : "transparent",
@@ -70,7 +70,7 @@ export default function Widget({}: Props) {
             <div className="text-red-500">No fields found</div>
           )
         }
-      </InferenceFields>
+      </InferenceData>
     </MindeeDocumentInferenceProvider>
   );
 }

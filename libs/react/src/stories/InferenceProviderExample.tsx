@@ -1,6 +1,5 @@
-import { InferenceFields, InferenceProvider, InferenceViewer } from "@/main";
-
 import { InferenceResult } from "@/types";
+import Inference from "@/main";
 
 interface Props {
   documentSrc: string;
@@ -12,13 +11,13 @@ export default function InferenceProviderExample({
   InferenceResult,
 }: Props) {
   return (
-    <InferenceProvider inference={InferenceResult}>
-      <InferenceViewer documentSrc={documentSrc} />
+    <Inference.Provider inference={InferenceResult}>
+      <Inference.Viewer documentSrc={documentSrc} />
       <div className="space-y-4 bg-gray-100 p-4 rounded-lg">
-        <InferenceFields.Field id="SubTotal" />
-        <InferenceFields.Field id="InvoiceDate" />
-        <InferenceFields.Field id="NotFound" />
+        <Inference.Field id="SubTotal" />
+        <Inference.Field id="InvoiceDate" />
+        <Inference.Field id="NotFound" />
       </div>
-    </InferenceProvider>
+    </Inference.Provider>
   );
 }

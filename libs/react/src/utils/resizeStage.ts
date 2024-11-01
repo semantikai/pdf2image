@@ -1,10 +1,6 @@
+import { imageObjRef, imageLayerRef } from "@/signals/image.js";
+import { stageRef, containerRef } from "@/signals/inference.js";
 import computeImageBoundingBox from "./computeBoundingBox.js";
-import {
-  containerRef,
-  imageLayerRef,
-  imageObjRef,
-  stageRef,
-} from "@/signals.js";
 
 export default function resizeStage() {
   const stage = stageRef.value;

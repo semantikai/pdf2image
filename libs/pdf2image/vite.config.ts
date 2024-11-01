@@ -5,13 +5,16 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [dts(), nodeExternals()],
-
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+    }),
+    nodeExternals(),
+  ],
   build: {
     lib: {
       formats: ["es", "cjs"],
-      entry: "src/index",
-      name: "PDF to Images",
+      entry: "src/index.ts",
       fileName: "index",
     },
   },

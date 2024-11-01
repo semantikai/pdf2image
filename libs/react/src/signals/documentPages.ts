@@ -1,8 +1,8 @@
-import { inferenceDocRef } from "@/signals";
 import { DocType } from "@/types";
-import getImagesFromPDF from "@/utils/getImagesFromPDF";
+import pdfToImage from "@semantik/pdf2image";
 import { computedAwait } from "@/utils/shared";
 import { signal } from "@preact/signals-react";
+import { inferenceDocRef } from ".";
 
 export const currentPageIndexRef = signal(0);
 
@@ -33,7 +33,7 @@ export const documentPages = computedAwait([], async () => {
     };
 
     try {
-      images = await getImagesFromPDF(inferenceDocRef.value.url);
+      images = await pdfToImage(inferenceDocRef.value.url);
       inferenceProcessingDocRef.value = {
         isProcessing: false,
         message: "",

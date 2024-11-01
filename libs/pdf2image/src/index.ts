@@ -1,3 +1,5 @@
+import { MAX_PDF_SCALE, PDF_RESOLUTION, DEFAULT_OPTIONS } from "./constants";
+
 import {
   getDocument,
   GlobalWorkerOptions,
@@ -9,16 +11,6 @@ import { RenderParameters } from "pdfjs-dist/types/src/display/api";
 
 GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${version}/pdf.worker.mjs`;
 
-export const PDF_RESOLUTION = 1.5 * 10 ** 6; // target resolution 1.5 Mpx
-export const MAX_PDF_SCALE = 5.5; // max DPI = 500
-
-/**
- * This function takes a PDF document and a page number and returns a data URL of the rendered page image.
- * @param _document - The PDF document to get the image from.
- * @param pageNumber - The number of the page to get the image from.
- * @param resolution - The resolution of the image. Default is 1.5 Mpx.
- * @returns A promise that resolves to a data URL of the rendered page image.
- */
 const getImageFromPage = async (
   _document: PDFDocumentProxy,
   pageNumber: number,
@@ -58,14 +50,17 @@ const getImageFromPage = async (
  *   })
  *   .catch(error => console.error(error));
  */
-export default function pdfToImage(
+export default function (
   file: string,
-  options = { allowedMaxPages: Infinity, resolution: PDF_RESOLUTION }
+  options: Partial<typeof DEFAULT_OPTIONS> = DEFAULT_OPTIONS
 ) {
   return new Promise<string[]>((resolve, reject) => {
     getDocument(file)
       .promise.then((document: PDFDocumentProxy) => {
-        if (document.numPages > options.allowedMaxPages) {
+        if (
+          options.allowedMaxPages &&
+          document.numPages > options.allowedMaxPages
+        ) {
           const error = new Error("Too many pages");
           error.name = "TooManyPagesError";
           reject(error);

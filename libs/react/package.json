@@ -5,15 +5,15 @@
   "type": "module",
   "module": "dist/index.js",
   "main": "dist/index.cjs",
-  "types": "dist/main.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && vite build",
     "dev": "tsc && vite build --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "doc:dev": "storybook dev -p 6006",
+    "doc:build": "storybook build"
   },
   "dependencies": {
     "@azure/ai-form-recognizer": "^5.0.0",
@@ -23,7 +23,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "@semantik/pdf2image": "workspace:*"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",

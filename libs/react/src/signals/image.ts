@@ -1,21 +1,37 @@
-import { imageLayerRef, imageObjRef } from "@/signals";
 import resizeStage from "@/utils/resizeStage";
-import { computed, effect } from "@preact/signals-react";
+import { computed, effect, signal } from "@preact/signals-react";
 import {
   currentPageIndexRef,
   documentPages,
   inferenceProcessingDocRef,
 } from "./documentPages";
-import { Image } from "konva/lib/shapes/Image";
+import { Layer } from "konva/lib/Layer";
+import { Image as KonvaImage } from "konva/lib/shapes/Image";
+import computeImageBoundingBox from "@/utils/computeBoundingBox";
+import { containerRef } from "./inference";
+
+export const imageLayerRef = signal(
+  new Layer({
+    listening: false,
+  })
+);
+
+export const imageShapeRef = signal<KonvaImage | undefined>(undefined);
+export const imageObjRef = signal<HTMLImageElement>(new Image());
 
 export const inferenceImageRef = computed(
   () => documentPages.value?.[currentPageIndexRef.value]
 );
 
+export const imageBoundingBoxRef = computed(() => {
+  if (!containerRef.value) return;
+  return computeImageBoundingBox(containerRef.value, imageObjRef.value);
+});
+
 const loadImage = (image: string) => {
   imageObjRef.value.onload = () => {
     imageLayerRef.value.destroyChildren();
-    const imageShape = new Image({
+    const imageShape = new KonvaImage({
       width: imageObjRef.value.width,
       height: imageObjRef.value.height,
       image: imageObjRef.value,

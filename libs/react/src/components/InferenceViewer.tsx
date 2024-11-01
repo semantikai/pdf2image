@@ -2,7 +2,7 @@ import { CSSProperties, useEffect } from "react";
 
 import { BoundingRegion, BoundingRegionsEvents } from "@/types";
 
-import { containerRef, inferenceDocRef } from "@/signals";
+import { containerRef } from "@/signals/inference";
 import { useSignalEffect, useSignals } from "@preact/signals-react/runtime";
 import { currentPageIndexRef, documentPages } from "@/signals/documentPages";
 import {
@@ -23,6 +23,7 @@ import {
 } from "@/utils/drawPolygons";
 import { destroyCanvas, initCanvas } from "@/utils/canvas";
 import { preProcessDocumentSrc } from "@/utils/inferenceDocument";
+import { inferenceDocRef } from "@/signals";
 
 type Props = {
   style?: CSSProperties;

@@ -18,6 +18,7 @@ type Props = {
     ) => Promise<InferenceResult | undefined>;
   }
 >;
+
 export default function InferenceProvider({
   inference,
   children,

@@ -32,38 +32,30 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const LocalImage: Story = {
+export const LoadLocalImage: Story = {
   args: {
     ...imageInvoice,
   },
 };
 
-export const LocalPDF: Story = {
+export const LoadLocalPDF: Story = {
   args: {
     ...pdfInvoice,
   },
 };
 
-export const MultiPageLocalPDF: Story = {
+export const LoadLocalMultiPagePDF: Story = {
   args: {
     ...multiPagePdfInvoice,
   },
 };
 
-export const RemoteImage: Story = {
+export const LoadRemoteImage: Story = {
   args: {},
 };
 
-export const RemotePDF: Story = {
+export const LoadRemotePDF: Story = {
   args: {
     documentSrc: remotePDF,
   },
-};
-
-export const FileImage: Story = {
-  args: {},
-};
-
-export const FilePDF: Story = {
-  args: {},
 };

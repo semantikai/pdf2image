@@ -1,4 +1,4 @@
-import { imageBoundingBoxRef, imageObjRef } from "@/signals";
+import { imageObjRef } from "@/signals/image";
 import { FlatCoordinateArray, PolygonCoordinates } from "@/types";
 
 export function isFlatArray(arr: PolygonCoordinates): arr is Array<number> {
