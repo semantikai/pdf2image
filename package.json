@@ -1,0 +1,39 @@
+{
+  "name": "@semantik/pdf2image",
+  "version": "0.2.0",
+  "description": "A utility library to convert PDF files to images",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "dev:watch": "vite --watch",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semantikai/pdf2image.git"
+  },
+  "keywords": [
+    "pdf",
+    "image",
+    "typescript",
+    "pdf-to-image",
+    "pdf-converter",
+    "pdfjs",
+    "canvas"
+  ],
+  "author": "Abdelfattah Sekak",
+  "license": "MIT",
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1",
+    "rollup-plugin-node-externals": "^7.1.2"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^4.3.136"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "@semantik/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./src"
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
